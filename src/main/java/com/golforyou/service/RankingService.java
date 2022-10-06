@@ -2,8 +2,6 @@ package com.golforyou.service;
 
 import java.util.List;
 
-import com.golforyou.vo.rankingVO;
-
 public interface RankingService {
 
 	int memberCount();
@@ -12,6 +10,12 @@ public interface RankingService {
 
 	List<String> getId();
 
-	List<Integer> playCount(String r_id);
+	int playCount(String r_id);
+
+	List<Integer> getRankPoint();
+
+	List<Integer> getBestRange();
+
+	List<Integer> getProvince();
 	
 }

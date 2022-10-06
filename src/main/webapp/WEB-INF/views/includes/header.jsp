@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GolForYou</title>
-<link rel="stylesheet" type="text/css" href="./css/header.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -27,7 +27,7 @@
     
      
     <%-- 회사로고 --%>
-    <div id="logo"><a href="index.do"><img src="./images/logo1.png"
+    <div id="logo"><a href="index.do"><img src="resources/images/logo1.png"
     width="70px" height="70px" alt="Golf" /></a></div>
  
      <%--상단 메뉴 --%>

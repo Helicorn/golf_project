@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.GolForYou.dao.*,com.GolForYou.vo.*" %>
+<%@ page import="com.golforyou.dao.*,com.golforyou.vo.*" %>
 <%@ page import="java.sql.*, java.util.*, javax.sql.*, javax.naming.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -19,27 +19,45 @@
 	
 	String prov = (String)request.getAttribute("prov");
 	int mem = (Integer)request.getAttribute("mem");
+	
 	String[] fileaddr = new String[mem];
+	
 	String[] rankid = new String[mem];
 	for(int i=0 ; i<mem ; ++i){
 		rankid[i] = (String)request.getAttribute("rankid"+i);
 	}
+	
 	int[] count = new int[mem];
 	for(int i=0 ; i<mem ; ++i){
 		count[i] = (Integer)request.getAttribute("count"+i);
+	}
+	
+	int[] rankpoint = new int[mem];
+	for(int i=0 ; i<mem ; ++i){
+		rankpoint[i] = (Integer)request.getAttribute("rankpoint"+i);
+	}
+	
+	int[] bestrange = new int[mem];
+	for(int i=0 ; i<mem ; ++i){
+		bestrange[i] = (Integer)request.getAttribute("bestrange"+i);
+	}
+	
+	String[] province = new String[mem];
+	for(int i=0 ; i<mem ; ++i){
+		province[i] = (String)request.getAttribute("province"+i);
 	}
 %>
 
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-<link rel="stylesheet" type="text/css" href="./css/ranking.css" />
-<link rel="stylesheet" type="text/css" href="./css/common.css" />
-<link rel="stylesheet" type="text/css" href="./css/board.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/ranking.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
 <br/>
 
 <%-- 랭킹 본문 --%>
 
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 
 
@@ -51,7 +69,7 @@
 	</span>	
 	<hr style="padding:0.5px; background-color:grey; width:1300px; margin-left:	4%; border:0; margin-top:20px;">
 	<div class="rank_title" id="rank_tag">
-		<form method="get" action="ranking.do">
+		<form method="get" action="ranking">
 			
 		<div class="search-box">
 			<input type="text" name="searchtxt" class="search-txt" onkeyup="press();" id="search_txt" placeholder="아이디 입력">
@@ -76,9 +94,9 @@
 			<li><a href="ranking.do">전체</a></li>
 			<li>서울・경기・인천
 				<ul class="province_2" id="province_2-3">
-					<li><i class="fas fa-map-marker-alt"></i><a href="ranking.do?prov=서울"> 서울</a></li>
-					<li><i class="fas fa-map-marker-alt"></i><a href="ranking.do?prov=경기"> 경기</a></li>
-					<li><i class="fas fa-map-marker-alt"></i><a href="ranking.do?prov=인천"> 인천</a></li>
+					<li><i class="fas fa-map-marker-alt"></i><a href="ranking?prov=서울"> 서울</a></li>
+					<li><i class="fas fa-map-marker-alt"></i><a href="ranking?prov=경기"> 경기</a></li>
+					<li><i class="fas fa-map-marker-alt"></i><a href="ranking?prov=인천"> 인천</a></li>
 				</ul>
 			</li>
 			<li>강원
@@ -128,7 +146,7 @@
 	</div>
 	
 	<script>
-		var memberCount = "<c:out value='${member}'/>"; //테스트용으로 회원이 8명 있다고 가정.  나중엔 데이터베이스 내의 자료 수를 불러와야함.
+		var memberCount = "<c:out value='${mem}'/>"; // 회원 수.
 		var divCount = $('.rank').length;  //rank class에 해당하는 div 개수(현재 0).
 		
 		//div 생성 반복문
@@ -163,117 +181,31 @@
 			$("#rankpoint"+(divCount+1)).html("<span id='rPoint_"+(divCount+1)+"'></span>");
 			
 			document.getElementById('rankno'+(divCount+1)).innerHTML = (divCount+1)+"위";
-			//document.getElementById('rProfile_'+(divCount+1)).innerHTML = "생성된프로필";
-			//document.getElementById('rId'+(divCount+1)).innerHTML = (divCount+1)+"번째아이디";
-			//document.getElementById('rankpoint'+(divCount+1)).innerHTML = "생성된점수";
-			//document.getElementById('rDriver_'+(divCount+1)).innerHTML = "생성된거리?";
-			//document.getElementById('rTier_'+(divCount+1)).innerHTML = "티어";
-			//document.getElementById('rCard_'+(divCount+1)).innerHTML = "생성된방문횟수?";
+			
 						
 			divCount = $('.rank').length; //div는 하나만 생기고있음. 
 			
-			//alert(divCount);
-		}//while
 			
+		}//while
 		
 	</script>
 	
 	
-	<!-- 데이터베이스에서 정보 끌고오기 -->
+	<!-- div 내 정보 자동입력 -->
 	<% 		
-		Connection con = null;
-		Statement stmt = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		DataSource ds = null;
-		String sql = null;
+	for(int i=1 ; i<=mem ; ++i){
 		
-		
-		
-		try {
-			Context ctx = new InitialContext();
-			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/xe"); //커넥션 풀 관리 ds생성
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		//String rankid;
-		if(prov == null){
-			try{
-				con = ds.getConnection();
-				sql = "select * from ranking order by r_sum asc";
-				pstmt = con.prepareStatement(sql);
-				
-				rs = pstmt.executeQuery();
-				
-				int i = 1;
-				
-				while(rs.next()) { //그때그때 출력이 계속되어야 함.
-					//String rankid = rs.getString("r_id");
-					int rankpoint = rs.getInt("r_sum"); 	
-					String rankprov = rs.getString("r_province");
-					//int count = dao.playCount(rankid);
-					int range = dao.getBestRange(rankid);
-					%>
-					<script>
-					$('#rId'+<%=i%>).append("<%=rankid[i-1]%>");
-					$('#rPoint_'+<%=i%>).append("<%=rankpoint%>");
-					$('#rProv_'+<%=i%>).append("<%=rankprov%>");
-					$('#rCard_'+<%=i%>).append("<%=count[i-1]%>");
-					$('#rDriver_'+<%=i%>).append("<%=range%>");
-					</script>
-					
-					<%
-					
-					fileaddr[i-1] = mdao.fileinfo(rankid);
-										
-					++i;
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally {
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(con != null) con.close();
-			}
-		}else{
-			try{
-				con = ds.getConnection();
-				sql = "select * from ranking where r_province=? order by r_sum asc";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, prov);
-				
-				rs = pstmt.executeQuery();
-				
-				int i = 1;
-				
-				while(rs.next()) { //그때그때 출력이 계속되어야 함.
-					String rankid = rs.getString("r_id");
-					int rankpoint = rs.getInt("r_sum"); 	
-					String rankprov = rs.getString("r_province");
-					int count = dao.playCount(rankid);
-					int range = dao.getBestRange(rankid);
-					%>
-					<script>
-					$('#rId'+<%=i%>).append("<%=rankid%>");
-					$('#rPoint_'+<%=i%>).append("<%=rankpoint%>");
-					$('#rProv_'+<%=i%>).append("<%=rankprov%>");
-					$('#rCard_'+<%=i%>).append("<%=count%>");
-					$('#rDriver_'+<%=i%>).append("<%=range%>");
-					</script>
-					
-					<%
-					fileaddr[i-1] = mdao.fileinfo(rankid);
-					++i;
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally {
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(con != null) con.close();
-			}
-		}
+		%>
+		<script>
+		$('#rId'+<%=i%>).append("<%=rankid[i-1]%>");
+		$('#rPoint_'+<%=i%>).append("<%=rankpoint[i-1]%>");
+		$('#rProv_'+<%=i%>).append("<%=province[i-1]%>");
+		$('#rCard_'+<%=i%>).append("<%=count[i-1]%>");
+		$('#rDriver_'+<%=i%>).append("<%=bestrange[i-1]%>");
+		</script>
+		<%		
+		//fileaddr[i-1] = mdao.fileinfo(rankid);
+	}
 		
 	%>
 	
@@ -283,7 +215,7 @@
 		%>
 		<script>
 		$("#rProfile_"+<%=i+1%>).css({
-			"background-image": "url('./upload/member"+"<%=fileaddr[i] %>"+"')",
+			"background-image": "url('/resources/upload/member"+"<%=fileaddr[i] %>"+"')",
 			"background-repeat" : "no-repeat",
 			"background-size" : "50px 50px"
 		});
@@ -302,23 +234,23 @@
 			var tierNum = $("#rPoint_"+i).text();
 			if(tierNum < -15){
 				tier = 'd.png';
-				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='다이아' src='./images/t_"+tier+"'>";
+				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='다이아' src='/resources/images/t_"+tier+"'>";
 				$("#rTier_"+i).append("다이아몬드");
 			}else if(tierNum >= -15 && tierNum < -10){
 				tier = 'p.png';
-				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='플레' src='./images/t_"+tier+"'>";
+				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='플레' src='/resources/images/t_"+tier+"'>";
 				$("#rTier_"+i).append("플레티넘");
 			}else if(tierNum >= -10 && tierNum < -5){
 				tier = 'g.png';
-				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='골드' src='./images/t_"+tier+"'>";
+				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='골드' src='/resources/images/t_"+tier+"'>";
 				$("#rTier_"+i).append("골드");
 			}else if(tierNum >= -5 && tierNum < 5){
 				tier = 's.png';
-				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='실버' src='./images/t_"+tier+"'>";
+				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='실버' src='/resources/images/t_"+tier+"'>";
 				$("#rTier_"+i).append("실버");
 			}else{
 				tier = 'b.png';
-				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='브' src='./images/t_"+tier+"'>";
+				document.getElementById("rTier_"+i).innerHTML = "<img class='tierPic' alt='브' src='/resources/images/t_"+tier+"'>";
 				$("#rTier_"+i).append("브론즈");
 			}
 			var profile = $('#rProfile_+i').text();
@@ -337,6 +269,34 @@
 	function searchname(){
 		var search = document.getElementById("search_txt").value;
 		return search;
+	}
+	
+	if("<c:out value='${prov}'/>" != null){
+		for(var i=1 ; i<=memberCount ; ++i){
+			if("<c:out value='${prov}'/>" == '서울'){
+				if(!($('#rProv_'+i).text() == '서울')){
+					$("#rank"+i).css({
+						"display": "none"
+					});
+				}
+			}else if("<c:out value='${prov}'/>" == '경기'){
+				if(!($('#rProv_'+i).text() == '경기')){
+					$("#rank"+i).css({
+						"display": "none"
+					});
+				}
+			}else if("<c:out value='${prov}'/>" == '인천'){
+				if(!($('#rProv_'+i).text() == '인천')){
+					$("#rank"+i).css({
+						"display": "none"
+					});
+				}
+			}
+			
+		}
+		
+		
+		
 	}
 	
 	

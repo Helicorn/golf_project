@@ -12,6 +12,12 @@ public interface RankingDAO {
 
 	List<String> getId();
 
-	List<Integer> playCount(String r_id);
+	int playCount(String r_id);
+
+	List<Integer> getRankPoint();
+
+	List<Integer> getBestRange();
+
+	List<Integer> getProvince();
 
 }

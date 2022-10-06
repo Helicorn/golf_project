@@ -2,6 +2,7 @@ package com.golforyou.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.golforyou.dao.RankingDAO;
@@ -9,6 +10,8 @@ import com.golforyou.vo.rankingVO;
 
 @Service
 public class RankingServiceImpl implements RankingService {
+	
+	@Autowired
 	private RankingDAO rankingDAO;
 
 	@Override
@@ -30,9 +33,27 @@ public class RankingServiceImpl implements RankingService {
 	}
 
 	@Override
-	public List<Integer> playCount(String r_id) {
+	public int playCount(String r_id) {
 		// TODO Auto-generated method stub
 		return rankingDAO.playCount(r_id);
+	}
+
+	@Override
+	public List<Integer> getRankPoint() {
+		// TODO Auto-generated method stub
+		return rankingDAO.getRankPoint();
+	}
+
+	@Override
+	public List<Integer> getBestRange() {
+		// TODO Auto-generated method stub
+		return rankingDAO.getBestRange();
+	}
+
+	@Override
+	public List<Integer> getProvince() {
+		// TODO Auto-generated method stub
+		return rankingDAO.getProvince();
 	}
 	
 	

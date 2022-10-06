@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sc">
+	<!-- 정보 입력된 전적 수 -->
+	<select id="s_count" resultType="int">
+		select count(*) from score_card where s_id=#{r_id} and s_updated=1
+	</select>
+</mapper>
