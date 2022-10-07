@@ -67,4 +67,24 @@ public class MemberController {
 		return null;
 	}//login_ok()
 	
+	//회원가입
+	@GetMapping("join")
+	public String join() {
+		return "member/join"; //뷰페이지 경로 WEB-INF/views/member/join.jsp
+		
+	}//join()
+	
+	//비밀번호 찾기
+	@GetMapping("findPwd")
+	public String findPwd() {
+		return "member/findPwd"; //뷰페이지 경로 WEB-INF/views/member/findPwd.jsp
+		
+	}//findPwd()
+	
+	//비밀번호 찾기 인증메일 전송
+	@GetMapping("findPwd_ok")
+	public String findPwd_ok() {
+		return "member/findPwd_ok"; //뷰페이지 경로 WEB-INF/views/member/findPwd_ok.jsp
+		
+	}//findPwd_ok()
 }
