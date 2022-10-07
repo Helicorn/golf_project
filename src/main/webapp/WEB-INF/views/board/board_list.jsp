@@ -6,7 +6,7 @@
 <title> </title>
 <link rel="stylesheet" type="text/css" href="./css/common.css" />
 <link rel="stylesheet" type="text/css" href="./css/board.css" />
-<jsp:include page="/view/includes/header.jsp" />
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
 <script type="text/javascript">
@@ -205,4 +205,4 @@ function Change(idx){
 </body>
 </html>
 
- <jsp:include page="/view/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 

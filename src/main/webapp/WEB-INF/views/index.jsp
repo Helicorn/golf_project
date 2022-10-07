@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GolForYou</title>
-<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 
@@ -17,7 +17,7 @@
      <%--상단 메뉴 --%>
 
      <div class="clear"></div> 
-     <script src="./js/jquery.js"></script>
+     <script src="/resources/js/jquery.js"></script>
      
      
       
@@ -26,7 +26,7 @@
     <input type="radio" name="radio-btn" id="img-1" checked />
     <li class="slide-container">
     <div class="slide">
-      <img src="./images/index/main1.png" />
+      <img src="/resources/images/index/main1.png" />
         </div>
     <div class="nav">
       <label for="img-6" class="prev">&#x2039;</label>
@@ -37,7 +37,7 @@
     <input type="radio" name="radio-btn" id="img-2" />
     <li class="slide-container">
         <div class="slide">
-          <img src="./images/index/main2.png" />
+          <img src="/resources/images/index/main2.png" />
         </div>
     <div class="nav">
       <label for="img-1" class="prev">&#x2039;</label>
@@ -48,7 +48,7 @@
     <input type="radio" name="radio-btn" id="img-3" />
     <li class="slide-container">
         <div class="slide">
-          <img src="./images/index/main3.png"  />
+          <img src="/resources/images/index/main3.png"  />
         </div>
     <div class="nav">
       <label for="img-2" class="prev">&#x2039;</label>
@@ -59,7 +59,7 @@
     <input type="radio" name="radio-btn" id="img-4" />
     <li class="slide-container">
         <div class="slide">
-          <img src="./images/index/main4.png"  />
+          <img src="/resources/images/index/main4.png"  />
         </div>
     <div class="nav">
       <label for="img-3" class="prev">&#x2039;</label>
@@ -93,7 +93,7 @@
     
      
     <%-- 회사로고 --%>
-    <div id="logo"><a href="index.do"><img src="./images/logo1.png"
+    <div id="logo"><a href="index.do"><img src="/resources/images/logo1.png"
     width="70px" height="70px" alt="Golf" /></a></div>
  
      <%--상단 메뉴 --%>
@@ -200,23 +200,23 @@
 		
 		if(tierNum < -15){
 			tier = 'd.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='다이아' src='./images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='다이아' src='/resources/images/t_"+tier+"'>");
 			
 		}else if(tierNum >= -15 && tierNum < -10){
 			tier = 'p.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='플레' src='./images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='플레' src='/resources/images/t_"+tier+"'>");
 			
 		}else if(tierNum >= -10 && tierNum < -5){
 			tier = 'g.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='골드' src='./images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='골드' src='/resources/images/t_"+tier+"'>");
 			
 		}else if(tierNum >= -5 && tierNum < 5){
 			tier = 's.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='실버' src='./images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='실버' src='/resources/images/t_"+tier+"'>");
 			
 		}else{
 			tier = 'b.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='브' src='./images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='브' src='/resources/images/t_"+tier+"'>");
 			
 		}
 
@@ -259,7 +259,7 @@
 <br/><br/><br/>
 
 <div id="logo_main">
-<div id="logo_1"><img src="./images/logo4.png" width="200" height="50"/>
+<div id="logo_1"><img src="/resources/images/logo4.png" width="200" height="50"/>
 </div>
 </div>
 <br/>

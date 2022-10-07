@@ -5,7 +5,7 @@
 <head>
  <link rel="stylesheet" type="text/css" href="./css/common.css" />
  <link rel="stylesheet" type="text/css" href="./css/board.css" />
- <jsp:include page="/view/includes/header.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
  <script>
     // 좋아요 버튼을 클릭 시 실행되는 코드
 $("#like").on("click", function () {
@@ -108,5 +108,5 @@ function openDelCheck(){
 </body>
 </html>
 
- <jsp:include page="/view/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 
