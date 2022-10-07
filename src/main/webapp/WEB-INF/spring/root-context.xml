@@ -21,9 +21,9 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
 		<!-- driverClassName 변수에 value속성값 저장 -->
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/> <!-- 오라클 접속 주소 -->
-		<property name="username" value="kong"/> <!-- 오라클 접속 사용자 -->
-		<property name="password" value="kong"/> <!-- 오라클 접속 비밀번호 -->
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1522:xe"/> <!-- 오라클 접속 주소 -->
+		<property name="username" value="week"/> <!-- 오라클 접속 사용자 -->
+		<property name="password" value="week"/> <!-- 오라클 접속 비밀번호 -->
 	</bean> <!-- bean단위가 자바로 표현하면 class단위, bean id는 객체명 -->
 	
 	<!-- spring JDBC dataSource와 mybatis를 연결 + mybatis환경설정 파일(자바 저장빈 ㅋㄹ래스 객체 별칭을 관리) -->
