@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<link rel="stylesheet" type="text/css" href="./css/login.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/login.css" />
 <div class="clear"></div>
-<script src="./js/jquery.js"></script>
-<script src="./js/member.js"></script>
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/member.js"></script>
 
 
 <%-- 회원가입 페이지 --%>

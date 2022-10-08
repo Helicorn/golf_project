@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" type="text/css" href="./css/login.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/login.css" />
 <div class="clear"></div>
 
 <style>
@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(./images/member/login3.png) no-repeat center center fixed; 
+    background: url(/resources/images/member/login3.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
   	-moz-background-size: cover;
  	-o-background-size: cover;
@@ -35,7 +35,7 @@
 }
 
 </style>
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 
 <body class="findPwd">
