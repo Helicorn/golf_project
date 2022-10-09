@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" type="text/css" href="./css/common.css" />
- <link rel="stylesheet" type="text/css" href="./css/board.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
  <script>
     // 좋아요 버튼을 클릭 시 실행되는 코드
