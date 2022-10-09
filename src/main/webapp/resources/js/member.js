@@ -39,8 +39,6 @@
           return false;
        }
        
-  
-      
    }
    
  //중복아이디 검색
@@ -88,7 +86,7 @@
        $.ajax({//$는 jQuery란 뜻. $.ajax 뜻은 jQuery 내의 비동기식 아작스 실행
            type:"POST",//데이터를 서버로 보내는 방법
           //url:"./member/member_idcheck.jsp",    
-           url:"idcheck.do", //아작스 서버 주소 파일명
+           url:"/idcheck", //아작스 서버 주소 파일명
            data: {"id":$m_id},  //좌측 id 피라미터 이름에 우측 $m_id변수값을 저장
            datatype:"int",//서버의 실행된 결과값을 사용자로 받아오는 방법
            success: function (data) {//success는 아작스로 받아오는것이 성공했을경우

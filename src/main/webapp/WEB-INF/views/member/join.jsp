@@ -9,7 +9,7 @@
 
 <body class="join">
 
-<form name="m" method="post" action="join_ok.do" onsubmit="return join_check();">
+<form name="m" method="post" action="join_ok" onsubmit="return join_check();">
 <div class="joinForm">
 <input type="text" name="m_id" id="m_id" class="textField" placeholder="아이디">
 <input type=button class="CheckBtn" value=중복확인 onclick="id_Check();"/><br/><span id="idcheck"></span>
