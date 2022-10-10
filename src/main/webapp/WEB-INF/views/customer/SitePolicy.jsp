@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./css/customer.css?after" />
-<jsp:include page="/view/includes/header.jsp" /> 
+<link rel="stylesheet" type="text/css" href="/resources/css/customer.css?after" />
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 <style type="text/css">
 
@@ -71,19 +71,19 @@
 			<dl class="sub_menu">
 			
 				<dd>
-					<a href="customer_main.do">FAQ</a>
+					<a href="customer_main">FAQ</a>
 				</dd>
 				<dd>
-					<a href="customer_fnq.do">1:1문의</a>
+					<a href="customer_fnq">1:1문의</a>
 				</dd>
 				<dd>
 					<a href="#">공지사항</a>
 				</dd>
 				<dd>
-					<a href="customer_sitepolicy.do">환불규정</a>
+					<a href="customer_sitepolicy">환불규정</a>
 				</dd>
 				<dd>
-					<a href="customer_holeinone.do">홀인원보험</a>
+					<a href="customer_holeinone">홀인원보험</a>
 				</dd>
 				
 			</dl>
@@ -305,5 +305,5 @@ GOLFORYOU 서비스와 관련하여 궁금하신 사항이 있으시면 고객�
 <Br>
 
 <div class="clear"></div>
-<jsp:include page="/view/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 </html>

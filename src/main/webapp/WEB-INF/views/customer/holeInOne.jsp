@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/customer.css?after" />
-<jsp:include page="/view/includes/header.jsp" /> 
+<link rel="stylesheet" type="text/css" href="/resources/css/customer.css?after" />
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 
 </head>
@@ -21,19 +21,19 @@
 			<dl class="sub_menu">
 			
 				<dd>
-					<a href="customer_main.do">FAQ</a>
+					<a href="customer_main">FAQ</a>
 				</dd>
 				<dd>
-					<a href="customer_fnq.do">1:1문의</a>
+					<a href="customer_fnq">1:1문의</a>
 				</dd>
 				<dd>
 					<a href="#">공지사항</a>
 				</dd>
 				<dd>
-					<a href="customer_sitepolicy.do">환불규정</a>
+					<a href="customer_sitepolicy">환불규정</a>
 				</dd>
 				<dd>
-					<a href="customer_holeinone.do">홀인원보험</a>
+					<a href="customer_holeinone">홀인원보험</a>
 				</dd>
 				
 			</dl>
@@ -73,5 +73,5 @@
 	
 	</div>
 </body>
-<jsp:include page="/view/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 </html>

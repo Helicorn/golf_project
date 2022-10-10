@@ -16,4 +16,16 @@ public class MemberDAOImpl implements MemberDAO {
 	
 		return this.sqlSession.selectOne("member_read",m_id);
 	}
+
+	@Override
+	public void insertMember(memberVO m) {
+		this.sqlSession.insert("member_in",m);
+		
+	}
+
+	@Override
+	public memberVO idCheck(String m_id) { 
+		return this.sqlSession.selectOne("id_check",m_id);
+		
+	}//아이디 중복 검사
 }

@@ -4,9 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<<<<<<< .merge_file_a24060
 <script src="./js/jquery.js"></script>
  <link rel="stylesheet" type="text/css" href="./css/common.css" />
  <link rel="stylesheet" type="text/css" href="./css/board.css" />
+=======
+<script src="/resources/js/jquery.js"></script>
+ <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
+>>>>>>> .merge_file_a16240
 </head>
 <body>
 <br><br>

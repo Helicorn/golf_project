@@ -2,8 +2,13 @@
 <!DOCTYPE html>
 <html>
  <head><meta charset="UTF-8">
+<<<<<<< .merge_file_a12900
  <link rel="stylesheet" type="text/css" href="./css/common.css" />
  <link rel="stylesheet" type="text/css" href="./css/board.css" />
+=======
+ <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
+>>>>>>> .merge_file_a18064
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 
@@ -109,11 +114,19 @@
    	  <td></td>
       <td class="buttontd"><input type="submit" class="submitBtn" value="등록" />
        <input type="reset" class="CheckBtn" value="취소"/><input type="reset" class="CheckBtn" value="목록" onclick="location='board_list.do?page=${page}';"/></td>
+<<<<<<< .merge_file_a12900
      </tr>
  
+=======
+     </tr> 
+>>>>>>> .merge_file_a18064
     </table>
     
 </form>
 </div> 
 </body> 
+<<<<<<< .merge_file_a12900
+=======
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
+>>>>>>> .merge_file_a18064
 </html>
