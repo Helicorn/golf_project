@@ -1,15 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<link rel="stylesheet" type="text/css" href="./css/login.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/login.css" />
 <div class="clear"></div>
-<script src="./js/jquery.js"></script>
-<script src="./js/member.js"></script>
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/member.js"></script>
 
 
 <%-- 회원가입 페이지 --%>
 
 <body class="join">
 
-<form name="m" method="post" action="join_ok.do" onsubmit="return join_check();">
+<form name="m" method="post" action="join_ok" onsubmit="return join_check();">
 <div class="joinForm">
 <input type="text" name="m_id" id="m_id" class="textField" placeholder="아이디">
 <input type=button class="CheckBtn" value=중복확인 onclick="id_Check();"/><br/><span id="idcheck"></span>

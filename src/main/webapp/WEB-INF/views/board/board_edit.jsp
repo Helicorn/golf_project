@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
  <head><meta charset="UTF-8">
- <link rel="stylesheet" type="text/css" href="./css/common.css" />
- <link rel="stylesheet" type="text/css" href="./css/board.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
  
  <%-- //현재 세션 상태 체크 

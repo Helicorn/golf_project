@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
  <head><meta charset="UTF-8">
- <link rel="stylesheet" type="text/css" href="./css/common.css" />
- <link rel="stylesheet" type="text/css" href="./css/board.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 
@@ -109,11 +109,11 @@
    	  <td></td>
       <td class="buttontd"><input type="submit" class="submitBtn" value="등록" />
        <input type="reset" class="CheckBtn" value="취소"/><input type="reset" class="CheckBtn" value="목록" onclick="location='board_list.do?page=${page}';"/></td>
-     </tr>
- 
+     </tr> 
     </table>
     
 </form>
 </div> 
 </body> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 </html>

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" type="text/css" href="./css/login.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/login.css" />
 <div class="clear"></div>
 <style>
 
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(./images/member/login3.png) no-repeat center center fixed; 
+    background: url(/resources/images/member/login3.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
   	-moz-background-size: cover;
  	-o-background-size: cover;
@@ -34,7 +34,7 @@
 }
 
 </style>
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 <script>
    function emailAuthentication() { //이메일 입력 유효검증 후, emailValCheck() 호출 후 결과값 확인,
 	   //결과값이 true라면 새 창에 email정보를 get방식으로 전송
@@ -96,7 +96,7 @@
 </div>
 
 <div>
-<form name="signUpForm" action="findPwd_ok.do" method="post" accept-charset="UTF-8">
+<form name="signUpForm" action="/findPwd_ok" method="post" accept-charset="UTF-8">
 <input type="email" name="email" class="textField" id="inputEmailForm" placeholder="example aaa@google.net"><br>
 <button type="submit" id="btn_change_password" class="submitBtn" onclick="emailAuthentication()">인증메일 전송</button>
 </form> 
@@ -117,7 +117,7 @@
 </div>
 
 <div>
-<form name="signUpForm" action="findPwd_ok.do" method="post" accept-charset="UTF-8">
+<form name="signUpForm" action="/findPwd_ok" method="post" accept-charset="UTF-8">
 <input type="email" name="email" class="textField" id="inputEmailForm" placeholder="인증 번호"><br>
 <button type="submit" id="btn_change_password" class="submitBtn" onclick="emailAuthentication()">인증번호 전송</button>
 </form> 

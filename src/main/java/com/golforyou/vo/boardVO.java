@@ -9,6 +9,7 @@ public class boardVO {
 	private String b_title;
 	private String b_pwd;
 	private String b_cont;
+	private String b_file;	
 	private int b_hit;
 	private int b_ref;
 	private int b_step;

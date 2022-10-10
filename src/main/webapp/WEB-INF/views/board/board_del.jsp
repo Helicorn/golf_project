@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<script src="./js/jquery.js"></script>
- <link rel="stylesheet" type="text/css" href="./css/common.css" />
- <link rel="stylesheet" type="text/css" href="./css/board.css" />
+<script src="/resources/js/jquery.js"></script>
+ <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
 </head>
 <body>
 <br><br>
