@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.golforyou.dao.*,com.golforyou.vo.*" %>
 <%@ page import="java.sql.*, java.util.*, javax.sql.*, javax.naming.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -229,7 +228,7 @@
 
 		var tier = '';
 		for(var i=1 ; i<=memberCount ; ++i){
-			$("#rank"+i).attr('onclick',"location.href='indivrank.do?rId="+document.getElementById("rId"+i).innerHTML+"&rPoint_="+$("#rPoint_"+i).text()+"&rankno="+$("#rankno"+i).text()+"'");
+			$("#rank"+i).attr('onclick',"location.href='indivrank?rId="+document.getElementById("rId"+i).innerHTML+"&rPoint_="+$("#rPoint_"+i).text()+"&rankno="+$("#rankno"+i).text()+"'");
 			
 			var tierNum = $("#rPoint_"+i).text();
 			if(tierNum < -15){

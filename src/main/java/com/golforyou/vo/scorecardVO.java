@@ -14,4 +14,7 @@ public class scorecardVO {
 	private int s_bestscore;
 	private double s_avgscore;
 	private int s_updated;
+	
+	private String graph_date;
+	
 }

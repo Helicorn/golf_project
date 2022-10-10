@@ -1,14 +1,12 @@
-<%@page import="com.GolForYou.dao.ScoreCardDAO"%>
-<%@page import="com.GolForYou.dao.rankDAO"%>
 <%@ page import="java.sql.*, java.util.*, javax.sql.*, javax.naming.*" %>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/includes/header.jsp" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-<link rel="stylesheet" type="text/css" href="./css/ranking.css" />
-<link rel="stylesheet" type="text/css" href="./css/indivrank.css" />
-<link rel="stylesheet" type="text/css" href="./css/common.css" />
-<link rel="stylesheet" type="text/css" href="./css/board.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/ranking.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/indivrank.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
 <br/>
 <%
 String id = request.getParameter("rId");
@@ -16,26 +14,21 @@ if(id == null) {
 	id = (String)session.getAttribute("id");;
 }
 
-rankDAO dao = new rankDAO();
-
-int getCount = dao.playCount(id);
-
-ScoreCardDAO sdao = new ScoreCardDAO();
+int getCount = (Integer)request.getAttribute("getCount");
 
 String[] viewDate = new String[getCount];
 String[] viewLocation = new String[getCount];
 int[] viewBestScore = new int[getCount];
 int[] viewRange = new int[getCount];
 for(int i=0 ; i<getCount ; ++i) {
-	viewDate[i] = sdao.getDate(id).get(i);
-	viewLocation[i] = sdao.getLocation(id).get(i);
-	viewBestScore[i] = sdao.getBestScore(id).get(i);
-	viewRange[i] = sdao.getRange(id).get(i);
+	viewDate[i] = (String)request.getAttribute("viewDate"+i);
+	viewLocation[i] = (String)request.getAttribute("viewLocation"+i);
+	viewBestScore[i] = (Integer)request.getAttribute("viewBestScore"+i);
+	viewRange[i] = (Integer)request.getAttribute("viewRange"+i);
 }
 %>
 <%-- 개인 본문 --%>
-<script src="../js/jquery.js"></script>
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> <!-- chart.js -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
@@ -224,7 +217,7 @@ for(int i=0 ; i<getCount ; ++i) {
 		}
 		
 		$(".ind_profile").css({
-			"background-image": "url('./upload/member/<c:out value='${img}'/>')",
+			"background-image": "url('/resources/upload/member/<c:out value='${img}'/>')",
 			"background-repeat" : "no-repeat",
 			"background-size" : "90px 90px",			
 		});
@@ -255,22 +248,22 @@ for(int i=0 ; i<getCount ; ++i) {
 		
 		if(loc == '잭 니클라우스 GC 코리아'){
 			$('#iLocation_'+<%=i+1%>).css({
-				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('./images/tier/JACK_NICKLAUS_GOLF_CLUB_KOREA.jpg')",
+				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/resources/images/tier/JACK_NICKLAUS_GOLF_CLUB_KOREA.jpg')",
 				"background-size" : "330px 80px"	
 				});
 		}else if(loc == '소노 펠리체 CC'){
 			$('#iLocation_'+<%=i+1%>).css({
-				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('./images/tier/SONO_FELICE_COUNTRY_CLUB.jpg')",
+				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/resources/images/tier/SONO_FELICE_COUNTRY_CLUB.jpg')",
 				"background-size" : "330px 80px"
 				});
 		}else if(loc == '해슬리 나인브릿지'){
 			$('#iLocation_'+<%=i+1%>).css({
-				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('./images/tier/HAESLEY_NINE_BRIDGE.jpg')",
+				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/resources/images/tier/HAESLEY_NINE_BRIDGE.jpg')",
 				"background-size" : "330px 80px"
 				});
 		}else if(loc == '골드레이크 CC'){
 			$('#iLocation_'+<%=i+1%>).css({
-				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('./images/GOLD_LAKE_CC.jpg')",
+				"background-image": "linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/resources/images/GOLD_LAKE_CC.jpg')",
 				"background-size" : "330px 80px"
 				});
 		}
