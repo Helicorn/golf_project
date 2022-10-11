@@ -85,7 +85,7 @@ function fn_planWrite(){
    --%>
   var w =window.screen.width/2 - 200;
   var h =window.screen.height/2 -200;
-  var url= "./planwrite.do"
+  var url= "/yeyag/planwrite"
   window.open(url,"planWrite","width=400, height=400,left="+w+",top="+h);
    <%--
    }
@@ -94,7 +94,7 @@ function fn_planWrite(){
 </script>
 
 <body>
-<form name="frm" method="post" action="./planlist.do">원하는 날짜를 입력하세요:&nbsp; 
+<form name="frm" method="post" action="/yeyag/planlist">원하는 날짜를 입력하세요:&nbsp; 
 <input type="text" name="year" size="3">년
 <input type="text" name="month"size="3">월
 &nbsp;&nbsp; <input type="submit" value="입력">

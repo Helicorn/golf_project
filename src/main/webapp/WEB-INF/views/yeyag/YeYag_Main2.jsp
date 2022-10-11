@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<jsp:include page="/view/includes/header.jsp" /> 
- <link rel="stylesheet" type="text/css" href="./css/YeYag_Main.css" />
+<header>
+	<jsp:include page="../includes/header.jsp" />
+</header>
+  <link rel="stylesheet" type="text/css" href="/resources/css/YeYag_Main.css" />
 </head>
 <body>
 <br/><br/>
@@ -89,7 +91,7 @@ function go_pop(){
         
    <div class="clear"></div> 
       <div id="image">
-	  <div id="image_1"><img src="./images/yeyag/JACK.jpg" width="500" height="300"/></div>
+	  <div id="image_1"><img src="/resources/images/yeyag/JACK.jpg" width="500" height="300"/></div>
             <div class="basic-txt">
                 <div class="txt-box txt01">
                     <p><span>홀</span><span>18</span></p>
@@ -259,6 +261,8 @@ marker.setMap(map);
         </div>
     </form>
 </div>
-<jsp:include page="/view/includes/footer.jsp" /> 
+<footer>
+<jsp:include page="../includes/footer.jsp" />
+</footer>
 
 </html>

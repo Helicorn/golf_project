@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class yeyag_listVO {
-	private int y_no;
+	private int y_no; 
 	private String y_name;
 	private int y_list;
 	private int y_price;
@@ -13,4 +13,8 @@ public class yeyag_listVO {
 	private String y_img;
 	private String y_info;
 	private String y_url;
+	
+	//검색기능
+    private String find_field;
+    private String find_name;
 }

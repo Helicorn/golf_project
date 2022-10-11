@@ -45,7 +45,7 @@
 
 <body>
 
-<form name="frm" method="post" action="planWriteresult.do" style="width:100px;height:100px;">
+<form name="frm" method="post" action="/yeyag/planwriteresult" style="width:100px;height:100px;">
 
 <table>
 	<caption>예약등록</caption>

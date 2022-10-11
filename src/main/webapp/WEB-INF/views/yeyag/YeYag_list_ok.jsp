@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="/view/includes/header.jsp" /> 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title> </title>
-<link rel="stylesheet" type="text/css" href="./css/YeYag_list.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/YeYag_list.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <style type="text/css">
@@ -59,6 +59,9 @@ form #search{
 }
 
 </style>
+<header>
+	<jsp:include page="../includes/header.jsp" />
+</header>
 <body>
 <br />
    <div class="clear" style="margin-top: 135px"></div>
@@ -69,7 +72,7 @@ form #search{
 	 	<tr>
 	 	<th> 	
 	 	<div class="search-box">	
-	 	 <form  name="search" role="search" method="get" action="YeYag_list_ok.do">
+	 	 <form  name="search" role="search" method="get" action="yeyag/yeyag_list_ok">
 	 	 <input type="search" name="y_name" class="search-txt" placeholder="검색어를 입력해 주세요"/>
 	 	 <button type="submit" name="find_btn" class="search-btn">
 	 	 <i class="fas fa-search fa-2x"></i>
@@ -111,5 +114,7 @@ form #search{
 <br><br> 
 </body>
 
-<jsp:include page="/view/includes/footer.jsp" /> 
+<footer>
+<jsp:include page="../includes/footer.jsp" />
+</footer>
 </html>
