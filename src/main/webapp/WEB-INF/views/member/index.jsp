@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GolForYou</title>
-<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 
@@ -26,7 +26,7 @@
     <input type="radio" name="radio-btn" id="img-1" checked />
     <li class="slide-container">
     <div class="slide">
-      <img src="./images/index/main1.png" />
+      <img src="/resources/images/index/main1.png" />
         </div>
     <div class="nav">
       <label for="img-6" class="prev">&#x2039;</label>
@@ -37,7 +37,7 @@
     <input type="radio" name="radio-btn" id="img-2" />
     <li class="slide-container">
         <div class="slide">
-          <img src="./images/index/main2.png" />
+          <img src="/resources/images/index/main2.png" />
         </div>
     <div class="nav">
       <label for="img-1" class="prev">&#x2039;</label>
@@ -48,7 +48,7 @@
     <input type="radio" name="radio-btn" id="img-3" />
     <li class="slide-container">
         <div class="slide">
-          <img src="./images/index/main3.png"  />
+          <img src="/resources/images/index/main3.png"  />
         </div>
     <div class="nav">
       <label for="img-2" class="prev">&#x2039;</label>
@@ -59,7 +59,7 @@
     <input type="radio" name="radio-btn" id="img-4" />
     <li class="slide-container">
         <div class="slide">
-          <img src="./images/index/main4.png"  />
+          <img src="/resources/images/index/main4.png"  />
         </div>
     <div class="nav">
       <label for="img-3" class="prev">&#x2039;</label>
@@ -93,40 +93,40 @@
     
      
     <%-- 회사로고 --%>
-    <div id="logo"><a href="index.do"><img src="./images/logo1.png"
+    <div id="logo"><a href="/index"><img src="/resources/images/logo1.png"
     width="70px" height="70px" alt="Golf" /></a></div>
  
      <%--상단 메뉴 --%>
      
      <ul>
-      <li><a href="ranking.do"class=btn1>랭킹</a>
+      <li><a href="ranking"class=btn1>랭킹</a>
        <ul>
-       <li><a href="ranking.do">전체기록</a></li>
-       <li><a href="indivrank.do">개인기록</a></li>
+       <li><a href="ranking">전체기록</a></li>
+       <li><a href="indivrank">개인기록</a></li>
        </ul>
        </li>
-      <li><a href="board_list.do"class=btn1>게시판</a>
+      <li><a href="board_list"class=btn1>게시판</a>
        <ul>      
-       <li><a href="board_list.do">자유게시판</a></li>
-       <li><a href="scorecard_list.do">스코어카드<br>게시판</a></li>
+       <li><a href="board_list">자유게시판</a></li>
+       <li><a href="scorecard_list">스코어카드<br>게시판</a></li>
        </ul>
        </li>
-      <li><a href="YeYag_list.do"class=btn1>골프장</a>
+      <li><a href="/yeyag/yeyag_list"class=btn1>골프장</a>
        <ul>
-       <li><a href="field_search.do">골프장 검색</a></li>
-       <li><a href="YeYag_list.do">골프장 예약하기</a></li>
+       <li><a href="/yeyag/field_search">골프장 검색</a></li>
+       <li><a href="/yeyag/yeyag_list">골프장 예약하기</a></li>
        </ul>
        </li>
-      <li><a href="class_main.do"class=btn1>클래스</a>
+      <li><a href="class_main"class=btn1>클래스</a>
        <ul>
-       <li><a href="class_main.do">필드 클래스</a></li>
-       <li><a href="class_online.do">온라인 클래스</a></li>
+       <li><a href="class_main">필드 클래스</a></li>
+       <li><a href="class_online">온라인 클래스</a></li>
        </ul>
        </li>
-      <li><a href="customer_main.do"class=btn1>고객센터</a>
+      <li><a href="customer_main"class=btn1>고객센터</a>
        <ul>
-       <li><a href="customer_main.do">1:1</a></li>
-       <li><a href="customer_holeinone.do">홀인원 보험</a></li>
+       <li><a href="customer_main">1:1</a></li>
+       <li><a href="customer_holeinone">홀인원 보험</a></li>
        </ul>
        </ul>  
     </nav>
@@ -259,7 +259,7 @@
 <br/><br/><br/>
 
 <div id="logo_main">
-<div id="logo_1"><img src="./images/logo4.png" width="200" height="50"/>
+<div id="logo_1"><img src="/resources/images/logo4.png" width="200" height="50"/>
 </div>
 </div>
 <br/>
