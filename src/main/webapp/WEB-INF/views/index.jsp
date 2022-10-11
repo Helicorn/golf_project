@@ -93,7 +93,9 @@
     
      
     <%-- 회사로고 --%>
-    <div id="logo"><a href="/"><img src="/resources/images/logo1.png"
+
+    <div id="logo"><a href="/index"><img src="/resources/images/logo1.png"
+
     width="70px" height="70px" alt="Golf" /></a></div>
  
      <%--상단 메뉴 --%>
@@ -111,10 +113,17 @@
        <li><a href="scorecard_list">스코어카드<br>게시판</a></li>
        </ul>
        </li>
+
       <li><a href="YeYag_list"class=btn1>골프장</a>
        <ul>
        <li><a href="field_search">골프장 검색</a></li>
        <li><a href="YeYag_list">골프장 예약하기</a></li>
+
+      <li><a href="/yeyag/yeyag_list"class=btn1>골프장</a>
+       <ul>
+       <li><a href="/yeyag/field_search">골프장 검색</a></li>
+       <li><a href="/yeyag/yeyag_list">골프장 예약하기</a></li>
+
        </ul>
        </li>
       <li><a href="class_main"class=btn1>클래스</a>
@@ -125,7 +134,11 @@
        </li>
       <li><a href="customer_main"class=btn1>고객센터</a>
        <ul>
+
        <li><a href="customer_fnq">1:1</a></li>
+
+       <li><a href="customer_main">1:1</a></li>
+
        <li><a href="customer_holeinone">홀인원 보험</a></li>
        </ul>
        </ul>  

@@ -17,6 +17,7 @@
 
 <a href='<c:url value='/yeyag/yeyag_list'/>' role="button" class="btn btn-outline-info">골프장목록 들어가기</a><br/>
 <a href='<c:url value='/yeyag/field_search'/>' role="button" class="btn btn-outline-info">골프장 검색 들어가기</a><br/>
-<a href='<c:url value='/yeyag/yeyag_main'/>' role="button" class="btn btn-outline-info">골프장 상세페이지 들어가기</a>
+<a href='<c:url value='/yeyag/yeyag_main'/>' role="button" class="btn btn-outline-info">골프장 상세페이지 들어가기</a><br/>
+<a href='<c:url value='/index'/>' role="button" class="btn btn-outline-info">메인페이지 들어가기</a>
 </body>
 </html>
