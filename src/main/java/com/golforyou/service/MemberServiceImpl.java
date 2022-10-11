@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.golforyou.dao.MemberDAO;
+import com.golforyou.util.SHA256Util;
 import com.golforyou.vo.memberVO;
 
 
@@ -19,7 +20,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 
 		@Override
-		public void insertMember(memberVO m) {
+		public void insertMember(memberVO m) {			
 			this.memberDAO.insertMember(m);
 			
 		}
@@ -28,6 +29,12 @@ public class MemberServiceImpl implements MemberService {
 		public memberVO idCheck(String m_id) {
 			return this.memberDAO.idCheck(m_id);
 			
+		}
+
+		@Override
+		public String getSaltById(String m_id) {
+		
+			return memberDAO.getSaltById(m_id);
 		}
 		
 		

@@ -14,8 +14,19 @@ m_file varchar2(50),
 m_date date,
 m_state number(10),
 m_delcont varchar2(50),
-m_deldate date
+m_deldate date,
+salt varchar2(500)
 );
+
+alter table golformemberNew MODIFY m_pw varchar2(500);
+alter table golformemberNew add salt varchar2(500);
+
+commit 
+
+create table golformemberSalt(
+m_id varchar2(50) primary key,
+m_pw varchar2(500) not null,
+salt varchar2(500) 
 
 
 create sequence m_golf_seq
