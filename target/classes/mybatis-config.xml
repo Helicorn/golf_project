@@ -7,11 +7,19 @@
 <configuration>
 	<typeAliases> <!-- rankingVO 빈클래스 객체명 별칭이름 rank를 지정. 이 rank를 mybatis 매퍼태그에서 참조. -->
 	
-		<typeAlias type="com.golforyou.vo.memberVO" alias="member"/>		
+		<typeAlias type="com.golforyou.vo.memberVO" alias="member"/>
+		<typeAlias type="com.golforyou.vo.boardVO" alias="board"/>
+			
 		<typeAlias type="com.golforyou.vo.rankingVO" alias="rank"/> 
 		<typeAlias type="com.golforyou.vo.scboardVO" alias="scb"/>		
 		<typeAlias type="com.golforyou.vo.scorecardVO" alias="sc"/>
+<<<<<<< HEAD
 		<typeAlias type="com.golforyou.vo.boardVO" alias="board"/>
+=======
+		<typeAlias type="com.golforyou.vo.classVO" alias="class"/>
+>>>>>>> origin/sojeong
 	</typeAliases>
+
+	
 </configuration>
 
