@@ -258,8 +258,6 @@
 </div>
 <br/><br/><br/>
 
-
-
 <div id="logo_main">
 <div id="logo_1"><img src="/resources/images/logo4.png" width="200" height="50"/>
 </div>
