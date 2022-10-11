@@ -11,7 +11,7 @@
 		<typeAlias type="com.golforyou.vo.rankingVO" alias="rank"/> 
 		<typeAlias type="com.golforyou.vo.scboardVO" alias="scb"/>		
 		<typeAlias type="com.golforyou.vo.scorecardVO" alias="sc"/>
-
+		<typeAlias type="com.golforyou.vo.classVO" alias="class"/>
 	</typeAliases>
 </configuration>
 
