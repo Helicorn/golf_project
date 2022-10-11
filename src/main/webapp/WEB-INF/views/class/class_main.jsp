@@ -13,7 +13,7 @@
 
 
 <header>
-<jsp:include page="/view/includes/header.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 </header>
 
 
@@ -163,5 +163,5 @@
    <div class="clear" ></div>
 <br><br>
 </body>
-<jsp:include page="/view/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 </html>

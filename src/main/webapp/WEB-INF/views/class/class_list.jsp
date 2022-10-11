@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="./css/class_list.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-<%@ include file="../../view/includes/header.jsp"%>
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 </head>
 <body>
@@ -374,6 +374,6 @@
 
 </body>
 <div style="margin: 200px 0px 0px 0px;"></div>
-<jsp:include page="/view/includes/footer.jsp" />
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 </html>
 
