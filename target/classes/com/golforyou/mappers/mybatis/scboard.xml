@@ -5,5 +5,53 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="scb">
+	<!-- 게시판 리스트 카운트 -->
+	<select id="scb_count" resultType="int">
+		select count(sc_no) from scboard 
+		<where>
+			<if test="find_field == ''"></if> <!-- 검색전 기준 : 총레코드 개수 -->
+			<if test="find_field == 'sc_All'"> 
+				sc_title like #{find_name} or sc_cont like #{find_name} 
+			</if> 
+			<if test="find_field == 'sc_cont'"> <!-- 내용기준 -->
+				sc_cont like #{find_name}
+			</if>
+			<if test="find_field == 'sc_id'"> <!-- 내용기준 -->
+				sc_id like #{find_name}
+			</if>
+		</where>
+	</select>
 	
+	<!-- 게시판 내용 -->
+	<select id="scb_list" resultType="scb">
+		select * from (
+		select rowNum rNum,sc_id,sc_title,sc_hit,sc_ref,sc_step,sc_level,sc_date from(
+		select * from scboard
+		<where>
+			<if test="find_field == ''"></if> <!-- 검색전 기준. 검색어 입력하지 않으면 전체목록 -->
+			<if test="find_field == 'sc_All'"> <!-- 제목기준 -->
+				sc_title like #{find_name} or sc_cont like #{find_name} <!-- like는 ~와 비슷한 문자를 검색하는 검색연산자 키워드 -->
+			</if> 
+			<if test="find_field == 'sc_cont'"> <!-- 내용기준 -->
+				sc_cont like #{find_name}
+			</if>
+			<if test="find_field == 'sc_id'"> <!-- 내용기준 -->
+				sc_id like #{find_name}
+			</if>
+		</where>
+		order by sc_ref desc,sc_level asc
+		)
+		)
+		where rNum &gt;=#{startrow} and rNum &lt;=#{endrow}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="scb_hit">
+		update scboard set sc_hit=sc_hit+1 where sc_no=#{sc_no}
+	</update>
+	
+	<!-- 내용보기 -->
+	<select id="scb_cont" resultType="scb">
+		select sc_no,sc_id,sc_title,sc_cont,sc_file,sc_hit from scboard where sc_no=#{sc_no}
+	</select>
 </mapper>
