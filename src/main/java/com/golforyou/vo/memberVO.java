@@ -18,6 +18,7 @@ public class memberVO {
 	private int m_state;
 	private String m_delcont;
 	private String m_deldate;
+	private String salt;
 	
 
 }

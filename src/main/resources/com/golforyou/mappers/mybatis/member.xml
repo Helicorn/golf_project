@@ -7,16 +7,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="Member">
 
 		<select id="member_read" resultType="member"> 	 
- 	 		select * from golformemberNew where m_id=#{m_id} and m_state=1
+ 	 		select * from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR} and m_state=1
  	 	</select>
  	 	
  	 	<insert id="member_in">
- 		 	insert into golformemberNew (m_no,m_id,m_pw,m_phone,m_email,m_gender,m_date,m_state)
- 		 	values (m_golf_seq.nextval,#{m_id},#{m_pw},#{m_phone},#{m_email},#{m_gender},sysdate,1)
+ 		 	insert into golformemberNew (m_no,m_id,m_pw,m_phone,m_email,m_gender,m_date,m_state,salt)
+ 		 	values (m_golf_seq.nextval,#{m_id,jdbcType=VARCHAR},#{m_pw,jdbcType=VARCHAR},#{m_phone},#{m_email},#{m_gender},sysdate,1,#{salt})
  	 	</insert>
  	 	
  	 	<select id="id_check" resultType="member">
- 	 		select * from golformemberNew where m_id=#{m_id}
+ 	 		select * from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR}
+ 	 	</select>
+ 	 	
+ 	 	<select id="salt_check" resultType="String">
+ 	 		select salt from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR}
  	 	</select>
  	 	
 </mapper>

@@ -31,15 +31,15 @@
 <script src="/resources/js/jquery.js"></script>
 <script>
    function login_check() {
-      if ($.trim($('#id').val()) == '') {//trim()함수는 양쪽 공백을 제거
+      if ($.trim($('#m_id').val()) == '') {//trim()함수는 양쪽 공백을 제거
          alert('아이디를 입력하세요!');
-         $('#id').val('').focus();
+         $('#m_id').val('').focus();
          return false;
       }
 
-      if ($.trim($('#pw').val()) == '') {
+      if ($.trim($('#m_pw').val()) == '') {
          alert('비밀번호를 입력하세요!');
-         $('#pw').val('').focus();
+         $('#m_pw').val('').focus();
          return false;
          
       }
@@ -48,8 +48,8 @@
 <c:if test="${empty id}"> <%--id가 비어 있다면~ 로그인 전 화면 --%>
 <div class="loginForm">
 <form method="post" class="loginFormin" action="/login_ok" onsubmit="return login_check();">
-<input type="text" name="id" id="id" class="textField" placeholder="아이디"><br>
-<input type="password" name="pw" id="pw" class="textField" placeholder="비밀번호"><br>
+<input type="text" name="m_id" id="m_id" class="textField" placeholder="아이디"><br>
+<input type="password" name="m_pw" id="m_pw" class="textField" placeholder="비밀번호"><br>
 <input type=submit class="submitBtn" value=로그인>
 <input type=checkbox name="maintainlogin" class="checkbox" value=로그인상태유지><span>로그인 상태 유지</span><br>
 </form> 

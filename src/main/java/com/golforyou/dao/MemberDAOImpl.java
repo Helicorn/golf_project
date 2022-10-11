@@ -12,8 +12,7 @@ public class MemberDAOImpl implements MemberDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public memberVO Login(String m_id) {
-	
+	public memberVO Login(String m_id) {	
 		return this.sqlSession.selectOne("member_read",m_id);
 	}
 
@@ -28,4 +27,9 @@ public class MemberDAOImpl implements MemberDAO {
 		return this.sqlSession.selectOne("id_check",m_id);
 		
 	}//아이디 중복 검사
+
+	@Override
+	public String getSaltById(String m_id) {		
+		return this.sqlSession.selectOne("salt_check",m_id);
+	}
 }
