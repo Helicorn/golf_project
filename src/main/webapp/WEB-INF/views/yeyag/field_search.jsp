@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
- <jsp:include page="/view/includes/header.jsp" /> 
+<header>
+	<jsp:include page="../includes/header.jsp" />
+</header>
 
 <!DOCTYPE html>
 <html>
@@ -285,5 +287,7 @@ function removeAllChildNods(el) {
 }
 </script>
 </body>
- <jsp:include page="/view/includes/footer.jsp" /> 
+<footer>
+<jsp:include page="../includes/footer.jsp" />
+</footer>
 </html>

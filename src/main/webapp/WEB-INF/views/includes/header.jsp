@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GolForYou</title>
-<link rel="stylesheet" type="text/css" href="resources/css/header.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/header.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -27,7 +27,7 @@
     
      
     <%-- 회사로고 --%>
-    <div id="logo"><a href="index.do"><img src="resources/images/logo1.png"
+    <div id="logo"><a href="index.do"><img src="/resources/images/logo1.png"
     width="70px" height="70px" alt="Golf" /></a></div>
  
      <%--상단 메뉴 --%>
@@ -45,10 +45,10 @@
        <li><a href="scorecard_list.do">스코어카드<br>게시판</a></li>
        </ul>
        </li>
-      <li><a href="YeYag_list.do" class=btn1>골프장</a>
+      <li><a href="/yeyag/yeyag_list" class=btn1>골프장</a>
        <ul>
-       <li><a href="field_search.do">골프장 검색</a></li>
-       <li><a href="YeYag_list.do">골프장 예약하기</a></li>
+       <li><a href="/yeyag/field_search">골프장 검색</a></li>
+       <li><a href="/yeyag/yeyag_list">골프장 예약하기</a></li>
        </ul>
        </li>
       <li><a href="class_main.do" class=btn1>클래스</a>

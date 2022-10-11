@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/footer.css" />
 </head>
 <body>
 <footer>
@@ -46,7 +46,7 @@
 		<div id=fwrapper>
 		<div id="logo_main">
 			<div id="logo_1">
-				<img src="./images/logo4.png" width="290" height="70" />
+				<img src="/resources/images/logo4.png" width="290" height="70" />
 			</div>
 		</div>
 		<br />
