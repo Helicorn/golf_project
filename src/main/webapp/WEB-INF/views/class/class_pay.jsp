@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="./css/count2.css" />
 <link rel="stylesheet" type="text/css" href="./css/header.css" />
 <link rel="stylesheet" type="text/css" href="./css/class_pay.css" />
-<%@ include file="../../view/includes/header.jsp"%>
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 <body>
 <form method="post" action="class_pay_ok.do?state=list&c_no=2">
