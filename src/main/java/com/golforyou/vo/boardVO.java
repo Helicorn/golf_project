@@ -9,10 +9,9 @@ public class boardVO {
 	private String b_title;
 	private String b_pwd;
 	private String b_cont;
-<<<<<<< .merge_file_a16004
-=======
+
 	private String b_file;	
->>>>>>> .merge_file_a29164
+
 	private int b_hit;
 	private int b_ref;
 	private int b_step;
