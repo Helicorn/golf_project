@@ -80,7 +80,7 @@
 							</div>
 							<button class="btn01" type="button" onclick="">장바구니</button>
 							<button class="btn02" type="button"
-								onclick="location.href='class_list.do?state=pay&c_no=2'">바로
+								onclick="location.href='class_list?state=pay&c_no=2'">바로
 								결제</button>
 						</div>
 
@@ -115,7 +115,7 @@
 							</div>
 							<button class="btn01" type="button" onclick="">장바구니</button>
 							<button class="btn02" type="button"
-								onclick="location.href='class_list.do?state=pay&c_no=2'">바로
+								onclick="location.href='class_list?state=pay&c_no=2'">바로
 								결제</button>
 						</div>
 
@@ -150,7 +150,7 @@
 							</div>
 							<button class="btn01" type="button" onclick="">장바구니</button>
 							<button class="btn02" type="button"
-								onclick="location.href='class_list.do?state=pay&c_no=2'">바로
+								onclick="location.href='class_list?state=pay&c_no=2'">바로
 								결제</button>
 						</div>
 					</div>
@@ -205,7 +205,7 @@
 					<div class="tab4_right">
 						<div class="notice">
 							<div class="warning">
-								<img src="images/class/warning.png" />
+								<img src="/resources/images/class/warning.png" />
 							</div>
 							<div class="warning2">서비스 제공이 완료된 이후에 전문가에게 결제 대금이 전달됩니다.</div>
 						</div>
