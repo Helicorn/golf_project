@@ -18,4 +18,14 @@ public class classVO {
 	private String c_price; //가격
 	private String c_addr; //클래스 지역
 	private String c_image; //이미지 경로
+	
+	
+	//쪽나누기용 변수
+	private int c_startrow; //시작행 번호
+	private int c_endrow; //끝행 번호
+	
+	//검색기능
+	private String c_find_field;
+	private String c_find_name;
+
 }
