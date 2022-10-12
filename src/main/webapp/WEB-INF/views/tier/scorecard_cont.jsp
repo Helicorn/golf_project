@@ -1,18 +1,16 @@
-<%@ page import="com.GolForYou.vo.scboardVO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.sql.*, java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="/WEB-INF/views/includes/header.jsp" />
-<link rel="stylesheet" type="text/css" href="./css/header.css" />
-<link rel="stylesheet" type="text/css" href="./css/ranking.css" />
-<link rel="stylesheet" type="text/css" href="./css/scorecard_cont.css" />
-<link rel="stylesheet" type="text/css" href="./css/board.css" />
-<link rel="stylesheet" type="text/css" href="./css/foot.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/header.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/ranking.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/scorecard_cont.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/foot.css" />
 <br>
 
-<script src="../js/jquery.js"></script>
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 <%-- 글내용 본문 --%>
 <article id="sccont_main">
@@ -33,7 +31,7 @@
 			<tr height="15%">
 				<th>
 				<div class="sccont_image">
-					<img src="./upload/${sb.sc_file }" width="800px" height="200px" alt="스코어카드">
+					<img src="/resources/upload/${sb.sc_file }" width="800px" height="200px" alt="스코어카드">
 				</div>
 			</tr>
 			<tr height="58%">

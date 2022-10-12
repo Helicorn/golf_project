@@ -35,7 +35,7 @@
 		<!-- classpath경로는 해당 개발툴의 메이븐 폴더 가상경로가 아니고 was서버에 의해서 실제로 변경된 실제 프로젝트의 WEB-INF/classes경로를 가리킴.
 		mybatis-config.xml파일의 역할을 자바 저장빈 클래스 객체 별칭을 관리. 개발툴의 가상경로는 src/main/resoureces이다. -->
 		
-		<property name="mapperLocations" value="classpath:com/golforyou/mappers/*/*.xml"/>
+		<property name="mapperLocations" value="classpath:/com/golforyou/mappers/*/*.xml"/>
 		<!-- 쿼리문을 담고있는 mybatis 매퍼태그가 있는 파일명이 들어가는 경로 -->
 	</bean>
 	

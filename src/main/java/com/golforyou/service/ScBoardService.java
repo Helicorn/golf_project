@@ -14,4 +14,12 @@ public interface ScBoardService {
 
 	scboardVO getScBoardCont2(int sc_no);
 
+	void insertBoard(scboardVO sb);
+
+	void replyBoard(scboardVO sb);
+
+	void updateBoard(scboardVO sb);
+
+	void delBoard(scboardVO sb);
+
 }

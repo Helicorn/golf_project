@@ -2,6 +2,7 @@ package com.golforyou.service;
 
 import java.util.List;
 
+import com.golforyou.vo.scboardVO;
 import com.golforyou.vo.scorecardVO;
 
 public interface IndivService {
@@ -26,4 +27,10 @@ public interface IndivService {
 
 	int getSumPoint(String id);
 
+	void autoInsert(scboardVO sb);
+
+	String makeDate(scboardVO sb);
+
+	void sortDate(scboardVO sb);
+	
 }

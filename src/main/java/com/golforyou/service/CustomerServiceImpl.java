@@ -8,6 +8,6 @@ import com.golforyou.dao.CustomerDAO;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-	@Autowired
+	//@Autowired
 	private CustomerDAO customerDAO;
 }

@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="member">
 
-		<select id="member_read" resultType="member"> 	 
+		<select id="member_read" parameterType="member" resultType="member"> 	 
  	 		select * from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR} and m_state=1
  	 	</select>
  	 	
@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		 	values (m_golf_seq.nextval,#{m_id,jdbcType=VARCHAR},#{m_pw,jdbcType=VARCHAR},#{m_phone},#{m_email},#{m_gender},sysdate,1,#{salt})
  	 	</insert>
  	 	
- 	 	<select id="id_check" resultType="member">
+ 	 	<select id="id_check" parameterType="member" resultType="member">
  	 		select * from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR}
  	 	</select>
  	 	

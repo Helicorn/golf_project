@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.golforyou.dao.IndivDAO;
+import com.golforyou.vo.scboardVO;
 import com.golforyou.vo.scorecardVO;
 
 @Service
@@ -72,6 +73,24 @@ public class IndivServiceImpl implements IndivService {
 	public int getSumPoint(String id) {
 		// TODO Auto-generated method stub
 		return indivDAO.getSumPoint(id);
+	}
+
+	@Override
+	public void autoInsert(scboardVO sb) {
+		// TODO Auto-generated method stub
+		indivDAO.autoInsert(sb);
+	}
+
+	@Override
+	public String makeDate(scboardVO sb) {
+		// TODO Auto-generated method stub
+		return indivDAO.makeDate(sb);
+	}
+
+	@Override
+	public void sortDate(scboardVO sb) {
+		// TODO Auto-generated method stub
+		indivDAO.sortDate(sb);
 	}
 	
 }

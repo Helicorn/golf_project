@@ -14,4 +14,15 @@ public interface ScBoardDAO {
 
 	scboardVO getScBoardCont(int sc_no);
 
+	void insertBoard(scboardVO sb);
+
+	void replyBoard(scboardVO sb);
+
+	void replyBoard2(scboardVO sb);
+
+	void updateBoard(scboardVO sb);
+
+	void delBoard(scboardVO sb);
+
+	
 }

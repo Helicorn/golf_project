@@ -54,4 +54,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="sc_sumpoint" resultType="int">
 		select s_avgscore from score_card where s_id=#{id} order by s_sort desc <!-- s_avgscore를 s_sumscore로 바꿔야함 -->
 	</select>
+	
+	<!-- 스코어카드 레코드 생성 -->
+	<insert id="sc_auto">
+		insert into score_card(s_id,s_date) values (s_id=#{sc_id},s_date=#{sc_playdate})
+	</insert>
+	
+	<!-- 날짜 구하기 -->
+	<select id="sc_makedate" resultType="String">
+		select s_date from score_card where s_id=#{sc_id} and s_date=#{sc_playdate}
+	</select>
+	
+	<!-- sortdate값 만들기 -->
+	<update id="sc_sort">
+		update score_card set s_sort=#{numdate} where s_id=#{sc_id} and s_date=#{sc_playdate}
+	</update>
+	
+	<!-- scorecard 삭제 -->
+	<delete id="sc_del">
+		delete from score_card where s_id=#{sc_id} and s_date=#{sc_playdate}
+	</delete>
 </mapper>

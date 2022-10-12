@@ -36,6 +36,37 @@ public class ScBoardDAOImpl implements ScBoardDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("scb_cont", sc_no);
 	}
-	
+
+	@Override
+	public void insertBoard(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("scb_write", sb);
+	}
+
+	@Override
+	public void replyBoard(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.update("scb_reply",sb);
+	}
+
+	@Override
+	public void replyBoard2(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("scb_reply2", sb);
+	}
+
+	@Override
+	public void updateBoard(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.update("scb_edit", sb);
+	}
+
+	@Override
+	public void delBoard(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.delete("scb_del", sb);
+		sqlSession.delete("sc_del", sb);
+	}
+
 	
 }

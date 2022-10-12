@@ -25,7 +25,7 @@ public class IndivrankController {
 	private RankingService rankingService;
 	
 	//개인랭크 페이지
-	@GetMapping("tier/indivrank")
+	@GetMapping("/tier/indivrank")
 	public ModelAndView indivrank(scorecardVO sv, HttpServletRequest request) {
 		ModelAndView im = new ModelAndView();
 		

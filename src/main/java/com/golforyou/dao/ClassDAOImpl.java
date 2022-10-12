@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ClassDAOImpl {
 
-	@Autowired
+	//@Autowired
 	private SqlSession sqlSession;
 	
 	

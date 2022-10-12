@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 목록 -->
-	<select id="board_list" parameterType="board" resultType="board">
+	<select id="board_list" resultType="List">
 	select * from (
 	select rowNum rNum, b_no, m_id, b_title, b_hit, b_ref, b_step,
 	b_level, b_date

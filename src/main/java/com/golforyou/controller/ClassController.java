@@ -8,8 +8,8 @@ import com.golforyou.service.ClassService;
 @Controller
 public class ClassController {
 
-	@Autowired
-	private ClassService classService;
+	//@Autowired
+	//private ClassService classService;
 	
 	
 }

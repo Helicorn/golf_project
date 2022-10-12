@@ -8,6 +8,6 @@ import com.golforyou.dao.ClassDAO;
 @Service
 public class ClassServiceImpl implements ClassService {
 
-	@Autowired
+	//@Autowired
 	private ClassDAO classDAO;
 }
