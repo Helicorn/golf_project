@@ -23,8 +23,6 @@
  
  --%>
  
-
- 
  
   <%--섬머노트 구동을 위한 정보  --%>
  <!-- include libraries(jQuery, bootstrap) -->
@@ -109,19 +107,12 @@
    	  <td></td>
       <td class="buttontd"><input type="submit" class="submitBtn" value="등록" />
        <input type="reset" class="CheckBtn" value="취소"/><input type="reset" class="CheckBtn" value="목록" onclick="location='board_list.do?page=${page}';"/></td>
-<<<<<<< .merge_file_a12900
      </tr>
- 
-=======
-     </tr> 
->>>>>>> .merge_file_a18064
-    </table>
-    
+    </table>    
 </form>
 </div> 
 </body> 
-<<<<<<< .merge_file_a12900
-=======
+
 <jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
->>>>>>> .merge_file_a18064
+
 </html>
