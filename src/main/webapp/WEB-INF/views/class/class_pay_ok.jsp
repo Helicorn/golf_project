@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 <title>결제가 완료되었습니다.</title>
 </head>
-<link rel="stylesheet" type="text/css" href="./css/class_pay_ok.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/class_pay_ok.css" />
 <body>
 	
 	<div class="payok_box">
 
 		<div id="payok_1">
-			<img src="./images/class/success.png" height=110px width=110px
+			<img src="/resources/images/class/success.png" height=110px width=110px
 				style="margin-top: 38px">
 			<div>
 				<h2 style="margin-top: 30px">주문이 성공적으로 완료되었습니다</h2>
@@ -61,8 +61,7 @@
 			</ul>
 
 		</div>
-		<input type="button" id="submitBtn" value="메인페이지로"
-			onclick="location='/MVC/index.do'">
+		<button id="submitBtn" type="button" onclick="location.href='index'">메인페이지로</button>
 
 	</div>
 
