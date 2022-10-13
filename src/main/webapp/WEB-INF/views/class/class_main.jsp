@@ -30,7 +30,7 @@
    <br/>
    <div class="category">
       <ul class="province_1">
-         <li><a href="ranking">전체</a></li>
+         <li><a href="ranking.do">전체</a></li>
          <li>서울・경기・인천
             <ul class="province_2" id="province_2">
                <li><i class="fas fa-map-marker-alt"></i><a
@@ -74,17 +74,12 @@
       </ul>
    </div>
    <div class="subject">
-<<<<<<< HEAD
       <button class="golf1" type="button">
          <a href="class_detail" />
-=======
-      <button class="golf1" type="button"
-         onClick="location.href='class_list?state=list&c_no=2'">
->>>>>>> a10399dab18272209c6d3c636dfd7bcfdeea5452
          <img src="/resources/images/class/online01_01.jpg">
          <h4 id="txt"><c:out value="${data.c_teacher}"/>&nbsp;프로</h4>
          <h3 id="txt"><c:out value="${data.c_title}"/></h3>
-         <h2 id="txt2"><c:out value="${data.c_price}"/></h2>
+         <h2 id="txt2"><c:out value="${data.c_sprice}"/></h2>
       </button>
       <button class="golf1" type="button"
          onClick="location.href='#'">
