@@ -8,5 +8,6 @@ public interface MemberDAO {
 	void insertMember(memberVO m);
 	memberVO idCheck(String m_id);
 	String getSaltById(String m_id);
+	memberVO getMember(String id);
 
 }

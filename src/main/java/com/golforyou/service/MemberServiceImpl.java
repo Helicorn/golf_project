@@ -36,6 +36,12 @@ public class MemberServiceImpl implements MemberService {
 		
 			return memberDAO.getSaltById(m_id);
 		}
+
+		@Override
+		public memberVO getMember(String id) {
+		
+			return memberDAO.getMember(id);
+		}
 		
 		
 }

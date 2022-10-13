@@ -8,5 +8,6 @@ public interface MemberService {
 	void insertMember(memberVO ab);
 	memberVO idCheck(String m_id);
 	String getSaltById(String m_id);
+	memberVO getMember(String id);
 
 }

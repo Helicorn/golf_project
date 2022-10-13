@@ -16,13 +16,10 @@
  	
  	if(id ==null){
  		PrintWriter script =response.getWriter();
- 		script.println("<script>");
- 		
- 	}
+ 		script.println("<script>"); 		
+ 	} 
  
- 
- --%>
- 
+ --%> 
  
   <%--섬머노트 구동을 위한 정보  --%>
  <!-- include libraries(jQuery, bootstrap) -->

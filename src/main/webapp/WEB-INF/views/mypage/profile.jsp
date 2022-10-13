@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" type="text/css" href="/resources/css/mypage.css" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 <script>
 <%--팝업창--%>
 function openPasswordPop(){
 	var w =window.screen.width/2 - 200;
 	var h =window.screen.height/2 - 200;
 	
-    var url = "changepwd.do";
+    var url = "changepwd";
     var name = "pwdChangePop";
     var option = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=504, height=370, left="+w+",top="+h+""; 
 
@@ -21,7 +21,7 @@ function openWithdrawalPop(){
 	var w =window.screen.width/2 - 200;
 	var h =window.screen.height/2 - 200;
 	  
-    var url = "withdrawal.do";
+    var url = "withdrawal";
     var name = "WithdrawalPop";
     var option = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=600, height=508, left="+w+",top="+h+""; 
 
@@ -59,7 +59,7 @@ $("#imgFile").change(function (){
 
 function delImg(){
 	$('#image_section').removeAttr('src');
-	$('#image_section').attr('src','./images/member/blank_profile.png');
+	$('#image_section').attr('src','/resources/images/member/blank_profile.png');
 }
 
 $('.edit-wrapper .tab').click(function(){
@@ -79,15 +79,11 @@ $('.edit-wrapper .tab').click(function(){
 	
 });
 
-
-
 </script>
 
 
 <div class="clear"></div>
 <br>
-
-
 
 <%-- 마이페이지 - 회원 수정 페이지 --%>
 <html>
@@ -134,7 +130,7 @@ $('.edit-wrapper .tab').click(function(){
 
 
 <div class="mypage">
-	<form name="profile" method="post" action="profileEdit_ok.do" onsubmit="return profile_check();"  enctype="multipart/form-data">
+	<form name="profile" method="post" action="profileEdit_ok" onsubmit="return profile_check();"  enctype="multipart/form-data">
 	<div class="profileForm">
 		
 		<c:if test="${!empty profile}"> 
@@ -164,20 +160,20 @@ $('.edit-wrapper .tab').click(function(){
 	 	</div>
 			<div class="inputBoxVertical">
 			<label>이메일</label><input type="email" name="m_email" class="textField"
-					placeholder="${m_email }"><br><%--<input
+					value="${m_email}" placeholder="${m_email}"><br><%--<input
 					type="button" name=button class="checkBtn" value="인증전송">--%>
 			</div>
 		
 			<div class="inputBoxVertical">
 			<label>휴대폰 번호</label><input type="tel" name="m_phone" class="textField"
 					pattern="^[0][1][0]-\d{4}-\d{4}$"
-					placeholder="${m_phone }"><br> 
+					value="${m_phone}" placeholder="${m_phone}"><br> 
 			</div>
 			
 			<div class="inputBoxVertical">
 			<label>주요 이용지역</label>
 			
-			<select id="m_addr" name="m_addr" class="textField" selected="${m_addr }">
+			<select id="m_addr" name="m_addr" class="textField" selected="${m_addr}">
 					<option value="서울" <c:if test="${select_zone =='Seoul'}">${'selected'}
         			 </c:if>>서울</option>
 					<option value="경기" <c:if test="${select_zone =='gg'}">${'selected'}

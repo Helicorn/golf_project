@@ -32,4 +32,9 @@ public class MemberDAOImpl implements MemberDAO {
 	public String getSaltById(String m_id) {		
 		return this.sqlSession.selectOne("salt_check",m_id);
 	}
+
+	@Override
+	public memberVO getMember(String id) {	
+		return this.sqlSession.selectOne("getMember",id);
+	}//회원정보 수정을 위한 아이디 받아오기
 }
