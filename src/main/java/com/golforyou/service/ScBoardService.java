@@ -29,4 +29,6 @@ public interface ScBoardService {
 
 	void updateCard(scorecardVO sc);
 
+	void delCard(scorecardVO sv);
+
 }

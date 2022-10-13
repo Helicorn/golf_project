@@ -1,15 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@page import="com.GolForYou.dao.ScoreCardDAO"%>
-<%@page import="com.GolForYou.dao.rankDAO"%>
 <%@ page import="java.sql.*, java.util.*, javax.sql.*, javax.naming.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" type="text/css" href="./css/admin_insertCard2.css" />
-<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/admin_insertCard2.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
 <br/>
 
 <%-- 관리자페이지-스코어카드 입력 본문 --%>
-<script src="../js/jquery.js"></script>
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 <script>
 	
@@ -44,13 +41,13 @@
 
 <article class="adminInsertCard2_main">
 <br>
-	<form method="post" action="admin_insertCard_ok.do">
+	<form method="post" action="admin_insertCard_ok">
 		<input type="hidden" name="s_id" value="${id }">
 		<input type="hidden" name="s_date" value="${date }">
 		<div id="imginfo_wrap">
 			<div>
 			<h2>스코어카드 이미지</h2> <br>
-			<img src="./upload/${folder }/${file }_${id }.png" width="1000" height="300" alt="스코어카드">
+			<img src="/resources/upload/${folder }/${file }_${id }.png" width="1000" height="300" alt="스코어카드">
 					
 			</div>
 			<br>
@@ -217,7 +214,7 @@
 
 	</form>
 	<hr>
-	<form method="post" action="admin_insertCard_del.do">
+	<form method="post" action="admin_insertCard_del">
 		<input type="hidden" name="s_id" value="${id }">
 		<input type="hidden" name="s_date" value="${date }">
 		잘못올린 게시글이나 사진양식이 잘못된 경우 : <input type="submit" class="checkBtn_admin" value="반려">

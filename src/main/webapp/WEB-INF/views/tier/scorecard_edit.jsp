@@ -1,19 +1,16 @@
-<%@ page import="com.GolForYou.vo.SCBoardVO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.GolForYou.dao.SCBoardDAO" %>
 <%@ page import="java.sql.*, java.util.*" %>
 
 <jsp:include page="/WEB-INF/views/includes/header.jsp" />
-<link rel="stylesheet" type="text/css" href="./css/header.css" />
-<link rel="stylesheet" type="text/css" href="./css/ranking.css" />
-<link rel="stylesheet" type="text/css" href="./css/scorecard_list.css" />
-<link rel="stylesheet" type="text/css" href="./css/scorecard_write.css" />
-<link rel="stylesheet" type="text/css" href="./css/common.css" />
-<link rel="stylesheet" type="text/css" href="./css/board.css" />
-<link rel="stylesheet" type="text/css" href="./css/foot.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/header.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/ranking.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/scorecard_list.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/scorecard_write.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/board.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/foot.css" />
 <br>
-<script src="../js/jquery.js"></script>
-<script src="./js/jquery.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 <%-- 스코어카드 게시판 글수정페이지 본문 --%>
 
@@ -39,7 +36,7 @@
 	</span>
 	<hr style="padding:0.5px; background-color:grey; width:1300px; margin-left:	4%; border:0; margin-top:20px;">
 	<div class="scwrite_wrap">
-	<form method="post" action="scorecard_edit_ok.do" onsubmit="return check();" enctype="multipart/form-data">
+	<form method="post" action="scorecard_edit_ok" onsubmit="return check();" enctype="multipart/form-data">
 		 <%-- 히든값 전달 --%>
 	    <input type="hidden" name="sc_no" value="${sb.sc_no }"> <%-- 번호가 전달 --%>
 	    <input type="hidden" name="page" value="${page }"> <%-- 페이지 쪽나누기에서 책갈피 기능을 구현하기 위해 히든으로 쪽번호 전달 --%>
@@ -77,7 +74,7 @@
 					
 				</td>
 				<td>
-					<input type="button" name="sc_list" class="submitBtn" id="sc_list" value="목록" onclick="location='scorecard_list.do?page=${page}'">
+					<input type="button" name="sc_list" class="submitBtn" id="sc_list" value="목록" onclick="location='scorecard_list?page=${page}'">
 				</td>
 			</tr>
 		</table>

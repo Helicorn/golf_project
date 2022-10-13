@@ -2,20 +2,7 @@
 <%@ page import="java.sql.*, java.util.*, javax.sql.*, javax.naming.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%	
-	/* String prov = request.getParameter("prov");
-	rankDAO dao = new rankDAO();	
-	MemberDAOImpl mdao=new MemberDAOImpl();
-	MemberVO m;//아이디에 해당하는 프로필 사진을 가져옴.
-	
-	int mem=0;
-	if(prov == null){
-		mem = dao.memberCount();
-	}else{
-		mem = dao.memberCount(prov);	
-	}
-	String[] fileaddr = new String[mem]; */
-	
+<%		
 	String prov = (String)request.getAttribute("prov");
 	int mem = (Integer)request.getAttribute("mem");
 	

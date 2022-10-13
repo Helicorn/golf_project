@@ -86,5 +86,11 @@ public class ScBoardServiceImpl implements ScBoardService {
 		scBoardDAO.updateCard(sc);
 	}
 
+	@Override
+	public void delCard(scorecardVO sv) {
+		// TODO Auto-generated method stub
+		scBoardDAO.delCard(sv);
+	}
+
 	
 }

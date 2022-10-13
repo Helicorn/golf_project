@@ -31,5 +31,7 @@ public interface ScBoardDAO {
 
 	void updateCard(scorecardVO sc);
 
+	void delCard(scorecardVO sv);
+
 	
 }

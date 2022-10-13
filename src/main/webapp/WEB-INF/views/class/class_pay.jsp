@@ -5,13 +5,13 @@
 <meta charset="UTF-8">
 <title></title>
 </head>
-<link rel="stylesheet" type="text/css" href="./css/count2.css" />
-<link rel="stylesheet" type="text/css" href="./css/header.css" />
-<link rel="stylesheet" type="text/css" href="./css/class_pay.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/count2.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/header.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/class_pay.css" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 
 <body>
-<form method="post" action="class_pay_ok.do?state=list&c_no=2">
+<form method="post" action="class_pay_ok">
 	<%--사이드 -----------------------------------------%>
 	<div class=side_a>
 		<div class="side_box">
@@ -43,7 +43,7 @@
 				style="padding: 2px; background-color: grey; width: 85%; margin-left: 11%">
 			<h2 id="price4" style="margin-left:10px;">&emsp;총 결제 금액 :</h2>
 			<h2 id="price3"><c:out value="${data.c_price}"/></h2>
-			<input type="submit" value="결제하기" class="pay_button">
+			<button class="pay_button" type="button" onclick="location.href='class_pay_ok'">결제하기</button>
 			
 		
 		</div>
@@ -75,7 +75,7 @@
 	</div>
 	<div class="pd">
 		<div id="pd1">
-			<img src="images/class/online01_01.jpg">
+			<img src="/resources/images/class/online01_01.jpg">
 		</div>
 		<div>
 			<h3 id="pd2"><c:out value="${data.c_price}"/></h3>

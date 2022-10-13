@@ -87,5 +87,11 @@ public class ScBoardDAOImpl implements ScBoardDAO {
 		sqlSession.update("sc_editCard", sc);
 	}
 
+	@Override
+	public void delCard(scorecardVO sv) {
+		// TODO Auto-generated method stub
+		sqlSession.delete("sc_delCard", sv);
+	}
+
 	
 }

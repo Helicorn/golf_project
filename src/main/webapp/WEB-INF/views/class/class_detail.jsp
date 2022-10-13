@@ -5,14 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>골프 클래스 상세페이지</title>
-<script src="./js/jquery.js"></script>
-<script src="./js/class_list.js"></script>
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/class_detail.js"></script>
 <script src="https://kit.fontawesome.com/7e87ecac1e.js"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="./css/class_list.css" />
+<link rel="stylesheet" type="text/css"
+	href="/resources/css/class_detail.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/header.jsp" />
 
 </head>
 <body>
@@ -52,15 +53,19 @@
 						<div id="tab1" class="tab_content">
 							<br>
 							<div class="price">
-								<span class="totalPrice"><c:out value="${data.c_price}" /></span>
+								<span class="totalPrice"><c:out value="${data.c_sprice}" />원</span>
 								<span class="vat">(VAT 포함가)</span><br /> <br />
 							</div>
 							<div class="class_detail">
 								<div class="class_info">
-									<c:out value="${data.c_info}" />
+									라운딩 골프 레슨
+									<c:out value="${data.c_srounding}" />
+									회
 								</div>
 								<div class="class_desc">
-									<p>${enter}</p>
+									<p>
+										<c:out value="${data.c_sdesc}" />
+									</p>
 								</div>
 							</div>
 							<div class="class_detail2">
@@ -70,31 +75,41 @@
 								</div>
 								<div class="detail_group">
 									<div class="detail_left">1회당 레슨 시간(분)</div>
-									<div class="detail_right">360분</div>
+									<div class="detail_right">
+										<c:out value="${data.c_stime}" />
+										분
+									</div>
 								</div>
 								<div class="detail_group">
 									<div class="detail_left">레슨 횟수</div>
-									<div class="detail_right">1회</div>
+									<div class="detail_right">
+										<c:out value="${data.c_srounding}" />
+										회
+									</div>
 								</div>
 
 							</div>
-							<button class="btn01" type="button" onclick="">장바구니</button>
+							<button class="btn01" type="button"
+								onclick="location.href='class_cart'">장바구니</button>
 							<button class="btn02" type="button"
-								onclick="location.href='class_list?state=pay&c_no=2'">바로
-								결제</button>
+								onclick="location.href='class_pay'">바로 결제</button>
 						</div>
 
 						<div id="tab2" class="tab_content">
 							<br>
 							<div class="price">
-								<span class="totalPrice">3,500,000원</span> <span class="vat">(VAT
-									포함가)</span><br /> <br />
+								<span class="totalPrice"><c:out value="${data.c_dprice}" />원</span>
+								<span class="vat">(VAT 포함가)</span><br /> <br />
 							</div>
 							<div class="class_detail">
-								<div class="class_info">라운딩 골프 레슨 5회</div>
+								<div class="class_info">
+									라운딩 골프 레슨
+									<c:out value="${data.c_drounding}" />
+									회
+								</div>
 								<div class="class_desc">
 									<p>
-										1. STANDARD와 동일<br /> 2. 끝장 레슨 1회 초대<br /> (30만원 상당)
+										<c:out value="${data.c_ddesc}" />
 									</p>
 								</div>
 							</div>
@@ -105,31 +120,42 @@
 								</div>
 								<div class="detail_group">
 									<div class="detail_left">1회당 레슨 시간(분)</div>
-									<div class="detail_right">210분</div>
+									<div class="detail_right">
+										<c:out value="${data.c_dtime}" />
+										분
+									</div>
 								</div>
 								<div class="detail_group">
 									<div class="detail_left">레슨 횟수</div>
-									<div class="detail_right">5회</div>
+									<div class="detail_right">
+										<c:out value="${data.c_drounding}" />
+										회
+									</div>
 								</div>
 
 							</div>
-							<button class="btn01" type="button" onclick="">장바구니</button>
+							<button class="btn01" type="button"
+								onclick="location.href='class_cart'">장바구니</button>
 							<button class="btn02" type="button"
-								onclick="location.href='class_list?state=pay&c_no=2'">바로
-								결제</button>
+								onclick="location.href='class_pay'">바로 결제</button>
+
 						</div>
 
 						<div id="tab3" class="tab_content">
 							<br>
 							<div class="price">
-								<span class="totalPrice">5,700,000원</span> <span class="vat">(VAT
-									포함가)</span><br /> <br />
+								<span class="totalPrice"><c:out value="${data.c_price}" />원</span>
+								<span class="vat">(VAT 포함가)</span><br /> <br />
 							</div>
 							<div class="class_detail">
-								<div class="class_info">라운딩 골프 레슨 10회</div>
+								<div class="class_info">
+									라운딩 골프 레슨
+									<c:out value="${data.c_prounding}" />
+									회
+								</div>
 								<div class="class_desc">
 									<p>
-										1. STANDARD와 동일<br /> 2. 끝장레슨 2회 무료 초대<br /> (60만원 상당)
+										<c:out value="${data.c_pdesc}" />
 									</p>
 								</div>
 							</div>
@@ -140,18 +166,25 @@
 								</div>
 								<div class="detail_group">
 									<div class="detail_left">1회당 레슨 시간(분)</div>
-									<div class="detail_right">420분</div>
+									<div class="detail_right">
+										<c:out value="${data.c_ptime}" />
+										분
+									</div>
 								</div>
 								<div class="detail_group">
 									<div class="detail_left">레슨 횟수</div>
-									<div class="detail_right">10회</div>
+									<div class="detail_right">
+										<c:out value="${data.c_prounding}" />
+										회
+									</div>
 								</div>
 
 							</div>
-							<button class="btn01" type="button" onclick="">장바구니</button>
+							<button class="btn01" type="button"
+								onclick="location.href='class_cart'">장바구니</button>
 							<button class="btn02" type="button"
-								onclick="location.href='class_list?state=pay&c_no=2'">바로
-								결제</button>
+								onclick="location.href='class_pay'">바로 결제</button>
+
 						</div>
 					</div>
 				</form>
@@ -253,41 +286,60 @@
 							<div class="detail_vertical">
 								<div class="standard1">STANDARD</div>
 								<div class="standard2">
-									<c:out value="${data.c_price}" />
+									<c:out value="${data.c_sprice}" />
+									원
 								</div>
 							</div>
 							<div class="detail_vertical">
 								<div class="deluxe1">DELUXE</div>
-								<div class="deluxe2">3,500,000원</div>
+								<div class="deluxe2">
+									<c:out value="${data.c_dprice}" />
+									원
+								</div>
 							</div>
 							<div class="detail_vertical">
 								<div class="premium1">PREMIUM</div>
-								<div class="premium2">5,700,000원</div>
+								<div class="premium2">
+									<c:out value="${data.c_pprice}" />
+									원
+								</div>
 							</div>
 						</div>
 						<div class="detail2">
 							<div class="detail2_1">패키지 설명</div>
 							<div class="detail_vertical">
 								<div class="standard_info">
-									<c:out value="${data.c_info}" />
+									라운딩 골프 레슨
+									<c:out value="${data.c_srounding}" />
+									회
 								</div>
 								<div class="standard_desc">
-									<p>${enter}</p>
-								</div>
-							</div>
-							<div class="detail_vertical">
-								<div class="deluxe_info">라운딩 골프 레슨 5회</div>
-								<div class="deluxe_desc">
 									<p>
-										1. STANDARD와 동일<br /> 2. 끝장 레슨 1회 초대<br /> (30만원 상당)
+										<c:out value="${data.c_sdesc}" />
 									</p>
 								</div>
 							</div>
 							<div class="detail_vertical">
-								<div class="premium_info">라운딩 골프 레슨 10회</div>
+								<div class="deluxe_info">
+									라운딩 골프 레슨
+									<c:out value="${data.c_drounding}" />
+									회
+								</div>
+								<div class="deluxe_desc">
+									<p>
+										<c:out value="${data.c_ddesc}" />
+									</p>
+								</div>
+							</div>
+							<div class="detail_vertical">
+								<div class="premium_info">
+									라운딩 골프 레슨
+									<c:out value="${data.c_prounding}" />
+									회
+								</div>
 								<div class="premium_desc">
 									<p>
-										1. STANDARD와 동일<br /> 2. 끝장 레슨 2회 초대<br /> (60만원 상당)
+										<c:out value="${data.c_pdesc}" />
 									</p>
 								</div>
 							</div>
@@ -301,20 +353,32 @@
 						<div class="detail4">
 							<div class="detail4_1">1회당 레슨시간(분)</div>
 							<div class="detail_vertical">
-								<c:out value="${data.c_time}" />
+								<c:out value="${data.c_stime}" />
 								&nbsp;분
 							</div>
-							<div class="detail_vertical">210&nbsp;분</div>
-							<div class="detail_vertical">420&nbsp;분</div>
+							<div class="detail_vertical">
+								<c:out value="${data.c_dtime}" />
+								&nbsp;분
+							</div>
+							<div class="detail_vertical">
+								<c:out value="${data.c_ptime}" />
+								&nbsp;분
+							</div>
 						</div>
 						<div class="detail5">
 							<div class="detail5_1">레슨 횟수</div>
 							<div class="detail_vertical">
-								<c:out value="${data.c_count}" />
+								<c:out value="${data.c_srounding}" />
 								&nbsp;회
 							</div>
-							<div class="detail_vertical">5&nbsp;회</div>
-							<div class="detail_vertical">10&nbsp;회</div>
+							<div class="detail_vertical">
+								<c:out value="${data.c_drounding}" />
+								&nbsp;회
+							</div>
+							<div class="detail_vertical">
+								<c:out value="${data.c_prounding}" />
+								&nbsp;회
+							</div>
 						</div>
 					</div>
 				</div>
@@ -374,6 +438,6 @@
 
 </body>
 <div style="margin: 200px 0px 0px 0px;"></div>
-<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" />
 </html>
 

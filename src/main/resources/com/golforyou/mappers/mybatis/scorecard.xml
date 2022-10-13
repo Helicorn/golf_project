@@ -87,5 +87,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where s_id=#{s_id} and s_date=#{s_date}
 	</update>
 	
-	
+	<!-- 스코어카드 삭제 -->
+	<delete id="sc_delCard">
+		delete from score_card where s_id=#{s_id} and s_date=#{s_date}
+	</delete>
 </mapper>

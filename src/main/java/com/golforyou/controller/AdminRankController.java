@@ -1,5 +1,6 @@
 package com.golforyou.controller;
 
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +29,7 @@ public class AdminRankController {
 	}
 	
 	//입력해야 할 스코어카드 존재 확인여부
-	@RequestMapping(value="/admin/admin_insertCard2")
+	@RequestMapping(value="/admin_insertCard2")
 	public String admin_InsertCard_Check(HttpServletRequest request, HttpServletResponse response, scboardVO sb) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
 		
@@ -64,7 +65,7 @@ public class AdminRankController {
 	}
 	
 	//스코어카드 정보 입력 확인
-	@RequestMapping(value="/admin/admin_insertCard_ok")
+	@RequestMapping(value="/admin_insertCard_ok")
 	public String admin_InsertCard_Ok(HttpServletRequest request, HttpServletResponse response, scorecardVO sc) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		
@@ -89,6 +90,41 @@ public class AdminRankController {
 		scBoardService.updateCard(sc);
 		
 		rankingService.updateAvgScore(sc); //point_avg,s_id
+		
+		return "redirect:/admin/admin_insertCard";
+	}
+	
+	//스코어카드 삭제
+	@RequestMapping(value="/admin_insertCard_del")
+	public void admin_InsertCard_del(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
+		String s_id = request.getParameter("s_id");
+		String s_date = request.getParameter("s_date");
+		
+		request.setAttribute("s_id", s_id);
+		request.setAttribute("s_date", s_date);
+	}
+	
+	//스코어카드 삭제 확인
+	@RequestMapping(value="/admin_insertCard_del_ok")
+	public String admin_InsertCard_del_ok(HttpServletRequest request, HttpServletResponse response, scorecardVO sv) throws Exception {
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("utf-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		String s_id = request.getParameter("s_id");
+		String s_date = request.getParameter("s_date");
+		
+		sv.setS_id(s_id);
+		sv.setS_date(s_date);
+		
+		scBoardService.delCard(sv);
+		
+		out.println("<script>");
+		out.println("alert('삭제 완료')");
+		out.println("<script>");
 		
 		return "redirect:/admin/admin_insertCard";
 	}

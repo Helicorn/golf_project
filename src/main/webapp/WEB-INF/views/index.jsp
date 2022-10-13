@@ -17,7 +17,7 @@
      <%--상단 메뉴 --%>
 
      <div class="clear"></div> 
-     <script src="./js/jquery.js"></script>
+     <script src="/resources/js/jquery.js"></script>
      
      
       
