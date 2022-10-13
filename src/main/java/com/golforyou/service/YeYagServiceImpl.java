@@ -10,7 +10,7 @@ import com.golforyou.dao.YeYagDAO;
 @Service
 public class YeYagServiceImpl implements YeYagService {
 
-	@Autowired
+	//@Autowired
 	private YeYagDAO yeyagDAO;
 
 

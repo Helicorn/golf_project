@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class YeYagDAOImpl implements YeYagDAO {
 
-	@Autowired
+	//@Autowired
 	private SqlSession sqlSession;
 
 }

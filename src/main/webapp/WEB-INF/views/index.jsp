@@ -17,7 +17,7 @@
      <%--상단 메뉴 --%>
 
      <div class="clear"></div> 
-     <script src="/resources/js/jquery.js"></script>
+     <script src="./js/jquery.js"></script>
      
      
       
@@ -81,65 +81,52 @@
     <nav> 
    
     <c:if test="${empty id}">
-    <div id="login"><a href="/login" class=btn1>로그인</a> | <a href="/join" class=btn1>회원가입</a></div></c:if>
+    <div id="login"><a href="login.do" class=btn1>로그인</a> | <a href="join.do" class=btn1>회원가입</a></div></c:if>
     
-    <c:if test="${!(empty id) && !(id=='admin')}"><div id="login"><a href="mypage" class=btn1>마이페이지</a> | <a href="logout" class=btn1>로그아웃</a></div>
+    <c:if test="${!(empty id) && !(id=='admin')}"><div id="login"><a href="mypage.do" class=btn1>마이페이지</a> | <a href="/logout" class=btn1>로그아웃</a></div>
     </c:if>
      
-    <c:if test="${!(empty id) && id=='admin'}"><div id="login"><a href="admin_main" class=btn1>관리자페이지</a> | <a href="logout" class=btn1>로그아웃</a></div>
+    <c:if test="${!(empty id) && id=='admin'}"><div id="login"><a href="admin_main.do" class=btn1>관리자페이지</a> | <a href="/logout" class=btn1>로그아웃</a></div>
     </c:if>
     
     <div class="clear"></div>  
     
      
     <%-- 회사로고 --%>
-
     <div id="logo"><a href="/index"><img src="/resources/images/logo1.png"
-
     width="70px" height="70px" alt="Golf" /></a></div>
  
      <%--상단 메뉴 --%>
      
      <ul>
-      <li><a href="ranking"class=btn1>랭킹</a>
+      <li><a href="/tier/ranking"class=btn1>랭킹</a>
        <ul>
-       <li><a href="ranking">전체기록</a></li>
-       <li><a href="indivrank">개인기록</a></li>
+       <li><a href="/tier/ranking">전체기록</a></li>
+       <li><a href="/tier/indivrank">개인기록</a></li>
        </ul>
        </li>
-      <li><a href="board_list"class=btn1>게시판</a>
+      <li><a href="/board_list"class=btn1>게시판</a>
        <ul>      
-       <li><a href="board_list">자유게시판</a></li>
-       <li><a href="scorecard_list">스코어카드<br>게시판</a></li>
+       <li><a href="/board_list">자유게시판</a></li>
+       <li><a href="/scorecard_list">스코어카드<br>게시판</a></li>
        </ul>
        </li>
-
-      <li><a href="YeYag_list"class=btn1>골프장</a>
-       <ul>
-       <li><a href="field_search">골프장 검색</a></li>
-       <li><a href="YeYag_list">골프장 예약하기</a></li>
-
       <li><a href="/yeyag/yeyag_list"class=btn1>골프장</a>
        <ul>
        <li><a href="/yeyag/field_search">골프장 검색</a></li>
        <li><a href="/yeyag/yeyag_list">골프장 예약하기</a></li>
-
        </ul>
        </li>
-      <li><a href="class_main"class=btn1>클래스</a>
+      <li><a href="class_main.do"class=btn1>클래스</a>
        <ul>
-       <li><a href="class_main">필드 클래스</a></li>
-       <li><a href="class_online">온라인 클래스</a></li>
+       <li><a href="class_main.do">필드 클래스</a></li>
+       <li><a href="class_online.do">온라인 클래스</a></li>
        </ul>
        </li>
-      <li><a href="customer_main"class=btn1>고객센터</a>
+      <li><a href="/customer_main"class=btn1>고객센터</a>
        <ul>
-
-       <li><a href="customer_fnq">1:1</a></li>
-
-       <li><a href="customer_main">1:1</a></li>
-
-       <li><a href="customer_holeinone">홀인원 보험</a></li>
+       <li><a href="/customer_main">1:1</a></li>
+       <li><a href="/customer_holeinone">홀인원 보험</a></li>
        </ul>
        </ul>  
     </nav>
@@ -205,6 +192,48 @@
         </div>
     </div>
     
+
+    
+
+ 
+
+<footer>
+	<div id="foot_main"  > 
+
+	
+		
+					<div id="foot_menu">FOR YOU</div>
+					<div id="foot_menu1">GolForYou</div>
+					<div id="foot_menu2">SOCIAL</div>
+					
+					<div id="menu_bottom1"><a href="#" class="btn">고객센터</a><br/>
+							<a href="#" class="btn">김캐디홈페이지</a></div>				
+				
+					
+					<div id="menu_bottom2"><a href="#" class="btn">클래스안내</a><br/>
+										<a href="#" class="btn">골프장안내</a></div>
+										
+				
+					<div id="menu_bottom3"><a href="#" class="btn">유튜브</a><br/>
+											<a href="#" class="btn">인스타그램</a></div>					
+	
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<div id="logo_1">
+				<img src="/resources/images/logo4.png"/>
+			</div>
+
+		<div id="message">
+			
+			2022 GolForYou. ALL RIGHTS RESERVED.<br/><br/>
+SOME INFORMATION ON THIS SITE MAY VARY SLIGHTLY BY<br/>
+                     LOCATION AND IN STADIUMS, <br/>
+                     EVENT VENUES AND INTERNATIONAL GolForYou.
+		</div>
+		</div>
+</footer>
  <script>
  var tier = "";
  for(var i=1 ; i<=5 ; ++i){
@@ -213,77 +242,28 @@
 		
 		if(tierNum < -15){
 			tier = 'd.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='다이아' src='/resources/images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='다이아' src='./images/t_"+tier+"'>");
 			
 		}else if(tierNum >= -15 && tierNum < -10){
 			tier = 'p.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='플레' src='/resources/images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='플레' src='./images/t_"+tier+"'>");
 			
 		}else if(tierNum >= -10 && tierNum < -5){
 			tier = 'g.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='골드' src='/resources/images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='골드' src='./images/t_"+tier+"'>");
 			
 		}else if(tierNum >= -5 && tierNum < 5){
 			tier = 's.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='실버' src='/resources/images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='실버' src='./images/t_"+tier+"'>");
 			
 		}else{
 			tier = 'b.png';
-			$("#conB_content_"+i).append("<img class='tierPic' alt='브' src='/resources/images/t_"+tier+"'>");
+			$("#conB_content_"+i).append("<img class='tierPic' alt='브' src='./images/t_"+tier+"'>");
 			
 		}
 
 	}
  </script>
-    
-
- 
-
-<footer >
-<div id="foot_main">
-<div id="foot_menu">
-<ul>
-<li>FOR YOU</li>
-<li>GolForYou</li>
-<li>SOCIAL</li>
-</ul>
-</div>
-
-<div id="menu_bottom1">
-<ul>
-<li>고객센터</li>
-<li>김캐디홈페이지</li>
-</ul>
-</div>
-
-<div id="menu_bottom2">
-<ul>
-<li>채용안내</li>
-<li>골프장안내</li>
-</ul>
-</div>
-
-<div id="menu_bottom3">
-<ul>
-<li>유튜브</li>
-<li>인스타그램</li>
-</ul>
-</div>
-<br/><br/><br/>
-
-<div id="logo_main">
-<div id="logo_1"><img src="/resources/images/logo4.png" width="200" height="50"/>
-</div>
-</div>
-<br/>
-<div id="message">
-2022 GolForYou. ALL RIGHTS RESERVED.<br/><br/>
-SOME INFORMATION ON THIS SITE MAY VARY SLIGHTLY BY<br/>
-                     LOCATION AND IN STADIUMS, <br/>
-                     EVENT VENUES AND INTERNATIONAL GolForYou.
-</div>
-</div>
-</footer>
 </body>
 
 </html>

@@ -40,4 +40,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select r_sum from ranking where r_id=#{r_id}
 	</select>
 
+	<!-- 평균(사실은 총합)점수 업데이트 -->
+	<update id="sc_editAvg">
+		update ranking set r_sum=#{s_avgscore} where r_id=#{s_id}
+	</update>
 </mapper>

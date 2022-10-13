@@ -3,6 +3,7 @@ package com.golforyou.dao;
 import java.util.List;
 
 import com.golforyou.vo.rankingVO;
+import com.golforyou.vo.scorecardVO;
 
 public interface RankingDAO {
 
@@ -19,5 +20,7 @@ public interface RankingDAO {
 	List<Integer> getBestRange();
 
 	List<Integer> getProvince();
+
+	void updateAvgScore(scorecardVO sc);
 
 }

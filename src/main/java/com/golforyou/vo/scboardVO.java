@@ -25,7 +25,11 @@ public class scboardVO {
 	private String find_field;
 	private String find_name;
 	
+	private int numdate;
+	
 	public void setSc_date(String sc_date) {
 		this.sc_date = sc_date.substring(0,10);
 	}
+	
+	
 }

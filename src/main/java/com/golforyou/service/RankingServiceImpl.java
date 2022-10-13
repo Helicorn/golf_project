@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.golforyou.dao.RankingDAO;
 import com.golforyou.vo.rankingVO;
+import com.golforyou.vo.scorecardVO;
 
 @Service
 public class RankingServiceImpl implements RankingService {
@@ -54,6 +55,12 @@ public class RankingServiceImpl implements RankingService {
 	public List<Integer> getProvince() {
 		// TODO Auto-generated method stub
 		return rankingDAO.getProvince();
+	}
+
+	@Override
+	public void updateAvgScore(scorecardVO sc) {
+		// TODO Auto-generated method stub
+		rankingDAO.updateAvgScore(sc);
 	}
 	
 	

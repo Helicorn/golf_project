@@ -28,7 +28,4 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectOne("board_count",b);
 	}//게시물 글 수
 
-	
-
-
 }

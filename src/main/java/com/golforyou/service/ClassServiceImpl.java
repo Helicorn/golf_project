@@ -11,7 +11,7 @@ import com.golforyou.vo.classVO;
 @Service
 public class ClassServiceImpl implements ClassService {
 
-	@Autowired
+	//@Autowired
 	private ClassDAO classDAO;
 
 	@Override

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.golforyou.vo.scboardVO;
 import com.golforyou.vo.scorecardVO;
 
 @Repository
@@ -72,6 +73,24 @@ public class IndivDAOImpl implements IndivDAO {
 	public int getSumPoint(String id) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("sc_sumpoint", id);
+	}
+
+	@Override
+	public void autoInsert(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("sc_auto", sb);
+	}
+
+	@Override
+	public String makeDate(scboardVO sb) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("sc_makedate", sb);
+	}
+
+	@Override
+	public void sortDate(scboardVO sb) {
+		// TODO Auto-generated method stub
+		sqlSession.update("sc_sort", sb);
 	}
 	
 }
