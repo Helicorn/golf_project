@@ -1,12 +1,21 @@
 package com.golforyou.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.golforyou.service.ClassService;
+import com.golforyou.vo.boardVO;
+import com.golforyou.vo.classVO;
+
 
 @Controller
 public class ClassController {
@@ -55,4 +64,6 @@ public class ClassController {
 	public String class_pay_ok() {
 		return "/class/class_pay_ok";
 	}//class_pay_ok
+
+
 }

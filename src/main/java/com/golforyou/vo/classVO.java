@@ -30,4 +30,5 @@ public class classVO {
 	private String c_addr; //클래스 지역
 	private String c_image; //이미지 경로
 	
+
 }

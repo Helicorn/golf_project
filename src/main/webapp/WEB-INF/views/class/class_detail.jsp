@@ -138,6 +138,7 @@
 								onclick="location.href='class_cart'">장바구니</button>
 							<button class="btn02" type="button"
 								onclick="location.href='class_pay'">바로 결제</button>
+
 						</div>
 
 						<div id="tab3" class="tab_content">
@@ -183,6 +184,7 @@
 								onclick="location.href='class_cart'">장바구니</button>
 							<button class="btn02" type="button"
 								onclick="location.href='class_pay'">바로 결제</button>
+
 						</div>
 					</div>
 				</form>
