@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.golforyou.dao.MemberDAO;
 import com.golforyou.service.MemberService;
-import com.golforyou.util.PwdChange;
 import com.golforyou.util.SHA256Util;
 import com.golforyou.vo.memberVO;
 
@@ -89,7 +88,7 @@ public class MemberController {
 	//회원가입 및 비번 암호화
 	@RequestMapping("join_ok")
 		public ModelAndView join_ok(memberVO m,HttpServletResponse response,
-				HttpSession session) throws Exception{
+				HttpSession session, RedirectAttributes Redirect) throws Exception{
 		
 			response.setContentType("text/html; charset=UTF-8");
 			
@@ -105,38 +104,44 @@ public class MemberController {
 			
 		//	this.memberService.idCheck(m_id); //id 중복 검사
 			System.out.println(pw);
-			return new ModelAndView("redirect:/join_ok"); //뷰페이지 경로 WEB-INF/views/member/join.jsp
+			
+			Redirect.addFlashAttribute("msg", "회원가입이 완료되었습니다.");
+		
+			return new ModelAndView("redirect:/"); //뷰페이지 경로 WEB-INF/views/member/join.jsp
 		
 	}//join()
 	
 	//아이디 중복 확인 
-//	
-//	@PostMapping("idcheck")
-//	public ModelAndView idcheck(memberVO m,HttpServletResponse response,HttpServletRequest request,
-//			HttpSession session) throws Exception{
-//		response.setContentType("text/html; charset=UTF-8");
-//		PrintWriter out=response.getWriter();
-//	
-//		memberVO m_id=this.memberService.idCheck(m.getM_id()); 
-//
-//		if(m_id != null) {
-//			out.println("<script>");
-//			out.println("alert('중복된 아이디가 있습니다!');");
-//			out.println("</script>");
-//		}else {
-//			if(!m_id.getM_id().equals(m.getM_id())) {
-//				out.println("<script>");
-//				out.println("alert('중복된 아이디가 없습니다.');");
-//				out.println("</script>");
-//			}else {
-//	
-//				return new ModelAndView("redirect:/index");
-//		
+	@PostMapping("idcheck")
+	public ModelAndView idcheck(memberVO m,HttpServletResponse response,HttpServletRequest request,
+			HttpSession session) throws Exception{
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out=response.getWriter();
+	
+		memberVO db_id=this.memberService.idCheck(m.getM_id()); 
+		
+//		int re=-1; //중복 아이디가 없을 때 
+//		if(db_id != null) { //중복 아이디가 있을 때 
+//			re=1;
+//			
 //		}
-//			}
+//		out.println(re);//값 반환 
 //		return null;
-//	}
-//		
+		
+		if(db_id != null) {
+			out.println("<script>");
+			out.println("alert('중복된 아이디가 있습니다!');");
+			out.println("</script>");
+		}else {
+			if(!db_id.getM_id().equals(m.getM_id())) {
+				out.println("<script>");
+				out.println("alert('중복된 아이디가 없습니다.');");
+				out.println("</script>");				
+			}
+	
+		}return null;		
+	}
+		
 		
 	//비밀번호 찾기
 	@GetMapping("findPwd")
@@ -153,7 +158,7 @@ public class MemberController {
 	}//findPwd_ok()
 	
 	//로그아웃 
-	@RequestMapping(value="/logout",method=RequestMethod.POST)
+	  @PostMapping("/logout")
 	public String admin_logout(HttpServletResponse response,HttpSession session) throws Exception{
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=response.getWriter();
@@ -162,9 +167,13 @@ public class MemberController {
 		
 		out.println("<script>");
 		out.println("alert('로그아웃 되었습니다!');");
-		out.println("location='/login';");
+		out.println("location='index';");
 		out.println("</script>");
 		
 		return null;
 	}//logout()
+	
+
+	
+	
 }

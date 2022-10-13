@@ -23,4 +23,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	 		select salt from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR}
  	 	</select>
  	 	
+ 	 	<!-- 회원 정보 수정 -->
+ 	 	<update id="update_member">
+ 	 		update golformemberNew set m_phone=#{m_phone}, m_addr=#{m_addr}, m_email=#{m_email}, m_file=#{m_file} where m_id=#{m_id,jdbcType=VARCHAR}
+ 	 	</update>
+ 	 	
+ 	 	<update id="update_province">
+ 	 		update ranking set r_province=#{r_province} where r_id=#{r_id,jdbcType=VARCHAR}
+ 	 	</update>
+ 	 	
+ 	 	<!-- 회원 탈퇴 기능 -->
+ 	 	<update id="withdrawal">
+ 	 		update golformemberNew set m_delcont=#{m_delcont}, m_deldate=sysdate, m_state=2 where m_id=#{m_id,jdbcType=VARCHAR}
+ 	 	</update>
+ 	 	
+ 	 	 <select id="getMember" resultType="member">
+ 	 		select * from golformemberNew where m_id=#{m_id,jdbcType=VARCHAR}
+ 	 	</select>
+ 	 	
+ 	 	
 </mapper>
