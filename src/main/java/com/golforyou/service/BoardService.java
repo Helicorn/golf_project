@@ -12,6 +12,16 @@ public interface BoardService {
 
 	int getRowCount(boardVO b);
 
+	boardVO getBoardCont(int b_no);
+
+	boardVO getBoardCont2(int b_no);
+
+	void replyboard(boardVO rb);
+
+	void editboard(boardVO eb);
+
+	void delboard(int b_no);
+
 	
 
 }

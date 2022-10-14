@@ -12,5 +12,18 @@ public interface BoardDAO {
 
 	List<boardVO> getboardList(boardVO b);
 
+	boardVO getBoardCont(int b_no);
+
+	void replyboard(boardVO rb);
+
+	void editboard(boardVO eb);
+
+	void delboard(int b_no);
+
+	void updateHit(int b_no);
+
+	boardVO getBoard_cont(int b_no);
+
+	void updateLevel(boardVO rb);
 
 }

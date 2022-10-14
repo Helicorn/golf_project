@@ -7,7 +7,7 @@
 <script src="./js/jquery.js"></script>
 <script src="./js/class_list.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/class_list.css" />
-<jsp:include page="/view/includes/header.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 </head>
 <body>
 	<div id="header_body">
@@ -217,5 +217,5 @@
 	</div>
 </body>
 <br/>
-<jsp:include page="/view/includes/footer.jsp" /> 
+<jsp:include page="/WEB-INF/views/includes/footer.jsp" /> 
 </html>

@@ -12,7 +12,11 @@
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- 
+	스프링 MVC에서 root-context.xml파일의 역할은 스프링 jdbc(오라클 연결), 서비스 추가를 해서 AOP를 통한 트랜젝션 적용,
+	ORM mybatis적용, 모델 DAO설정까지. 스프링 컨트롤러를 통한 화면에 보여지는 영역인 뷰 부분은 없음. (컨트롤과 뷰 설정부분은 없음)
+	 -->
 	
 	<!-- AOP 자동 프록시 설정 -->
 	<aop:aspectj-autoproxy/>
@@ -35,11 +39,13 @@
 		<!-- classpath경로는 해당 개발툴의 메이븐 폴더 가상경로가 아니고 was서버에 의해서 실제로 변경된 실제 프로젝트의 WEB-INF/classes경로를 가리킴.
 		mybatis-config.xml파일의 역할을 자바 저장빈 클래스 객체 별칭을 관리. 개발툴의 가상경로는 src/main/resoureces이다. -->
 		
-		<property name="mapperLocations" value="classpath:/com/golforyou/mappers/*/*.xml"/>
+		<property name="mapperLocations" value="classpath:com/golforyou/mappers/*/*.xml"/>
 		<!-- 쿼리문을 담고있는 mybatis 매퍼태그가 있는 파일명이 들어가는 경로 -->
 	</bean>
+
+		
 	
-	 <!-- 트랜잭션 관리자(매니저) 설정 -->
+    <!-- 트랜잭션 관리자(매니저) 설정 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/> 
 		<!-- setter()을 통한 DI 즉 의존성을 주입하고 ref 빈아이디 dataSource를 호출하면 트랙잭션 반영 -->
