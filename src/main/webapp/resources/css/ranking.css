@@ -9,7 +9,7 @@ li{ padding:0px; margin:0px;}
 
 #ranking_main{
 	position:relative;
-	background:rgba(0,0,0,0); width:1500px; height:1000px; text-align:center;
+	background:rgba(0,0,0,0); width:1500px; height:1050px; text-align:center;
 	margin:140px 0px 0px 0px;
 	border:none;
 	margin-right:auto; margin-left:auto;
@@ -50,7 +50,7 @@ li{ padding:0px; margin:0px;}
   display: inline;
   line-height: 20px;
   top:10px;
-  left:295px;
+  left:150px;
   float:right;
 }
 .search-btn {
@@ -109,14 +109,16 @@ li{ padding:0px; margin:0px;}
 .searchtier{
 	position:relative;
 	margin:auto;
-	font-size:16px;
+	font-size:1.1em;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight:bold;
+	text-align:center;
 	padding:0px;
 	float:right;
-	width:80px;
+	width:100px;
 	height:40px;
 	line-height:30px;
-	top:10px;
-	left:290px;
+	background-color:#d4d4d4;
 }
 
 .search_btn:hover{

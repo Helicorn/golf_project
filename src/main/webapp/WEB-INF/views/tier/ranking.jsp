@@ -63,21 +63,14 @@
 			<button type="button" class="search-btn" onclick="searching();"><i class="fas fa-search"></i></button>	
 				
 		</div>
-		<select name="id_or_tier" class="searchtier" onchange="tierChange()">
-			<option value="select_All">전체</option>
-			<option value="select_bornze">브론즈</option>
-			<option value="select_silver">실버</option>
-			<option value="select_gold">골드</option>
-			<option value="select_platinum">플레티넘</option>
-			<option value="select_diamond">다이아몬드</option>
-		</select>
+		
 		</form>
 	</div>
 	
 	
 	<div class="category">
 		<ul class="province_1">
-			<li><a href="ranking.do">전체</a></li>
+			<li><a href="ranking">전체</a></li>
 			<li>서울・경기・인천
 				<ul class="province_2" id="province_2-3">
 					<li><i class="fas fa-map-marker-alt"></i><a href="ranking?prov=서울"> 서울</a></li>
@@ -118,7 +111,16 @@
 			<tr>
 				<th width="7%" id="Listno">#</th>
 				<th width="11%" id="Listprofile">프로필</th>
-				<th width="11%" id="Listtier">티어</th>
+				<th width="11%" id="Listtier">
+					<select name="id_or_tier" class="searchtier" onchange="tierChange()">
+						<option value="select_All">티어</option>
+						<option value="select_bornze">브론즈</option>
+						<option value="select_silver">실버</option>
+						<option value="select_gold">골드</option>
+						<option value="select_platinum">플레티넘</option>
+						<option value="select_diamond">다이아몬드</option>
+					</select>
+				</th>
 				<th width="25%" id="Listid">아이디</th>
 				<th width="14%" id="Listpoint">점수</th>
 				<th width="15%" id="Listdriver">최대비거리</th>				
@@ -251,6 +253,15 @@
 	//검색 관련 스크립트
 
 	var divCount = $('.rank').length;
+		
+	function getParameterByName(name){
+		name = name.replace(/[\[]/,"\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
+	var getprov = getParameterByName('prov');
 	
 	function searchname(){
 		var search = document.getElementById("search_txt").value;
@@ -307,22 +318,52 @@
 	<%-- 다이아:상위memeber/5 플레:상위member/5*2 골드:상위member/5*3 실버:상위member/5*4 브론즈:나머지 --%>
 	
 	function tierChange(){
+		
 		$(".rank").css({
 			"display" : "block"
 		});
-		if($(".searchtier option:checked").text() == "전체"){
-			$(".rank").css({
-				"display" : "block"
-			});
-		}else{
-			for(var i=1 ; i<=memberCount ; ++i){
-				if(!($("#rTier_"+i).text() == $(".searchtier option:checked").text())){
-					$("#rank"+i).css({
-						"display" : "none"
-					});
-				}
-			}		
-		}	
+		
+		if(getprov == ''){
+			if($(".searchtier option:checked").text() == "티어"){
+				$(".rank").css({
+					"display" : "block"
+				});
+			}else{
+				for(var i=1 ; i<=memberCount ; ++i){
+					if(!($("#rTier_"+i).text() == $(".searchtier option:checked").text())){
+						$("#rank"+i).css({
+							"display" : "none"
+						});
+					}
+				}		
+			}	
+		}else{ //prov가 있다면.
+			if($(".searchtier option:checked").text() == "티어"){				
+				$(".rank").css({
+					"display" : "block"
+				});
+				for(var i=1 ; i<=memberCount ; ++i){
+					if($('#rProv_'+i).text() != getprov){
+						$("#rank"+i).css({
+							"display" : "none"
+						});
+					}				
+				}			
+			}else{			
+				for(var i=1 ; i<=memberCount ; ++i){
+					if(!($("#rTier_"+i).text() == $(".searchtier option:checked").text())){
+						$("#rank"+i).css({
+							"display" : "none"
+						});
+					}
+					if($('#rProv_'+i).text() != getprov){
+						$("#rank"+i).css({
+							"display" : "none"
+						});
+					}
+				}		
+			}	
+		}				
 	}
 	
 	function press(){

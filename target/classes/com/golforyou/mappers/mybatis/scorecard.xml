@@ -52,7 +52,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 하루 점수합 가져오기 -->
 	<select id="sc_sumpoint" resultType="int">
-		select s_avgscore from score_card where s_id=#{id} order by s_sort desc <!-- s_avgscore를 s_sumscore로 바꿔야함 -->
+		select s_sumscore from score_card where s_id=#{id} order by s_sort desc <!-- s_avgscore를 s_sumscore로 바꿔야함 -->
 	</select>
 	
 	<!-- 스코어카드 레코드 생성 -->
@@ -83,7 +83,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 스코어카드 업데이트 -->
 	<update id="sc_editCard">
 		update score_card set 
-		s_location=#{s_location},s_putting=#{s_putting},s_range=#{s_range},s_handicap=#{s_handicap},s_bestscore=#{s_bestscore},s_avgscore=#{s_avgscore},s_updated=1 
+		s_location=#{s_location},s_putting=#{s_putting},s_range=#{s_range},s_handicap=#{s_handicap},s_bestscore=#{s_bestscore},s_sumscore=#{s_sumscore},s_updated=1 
 		where s_id=#{s_id} and s_date=#{s_date}
 	</update>
 	

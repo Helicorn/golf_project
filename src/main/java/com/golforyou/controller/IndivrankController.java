@@ -1,15 +1,18 @@
 package com.golforyou.controller;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.golforyou.service.IndivService;
@@ -26,13 +29,23 @@ public class IndivrankController {
 	
 	//개인랭크 페이지
 	@GetMapping("/tier/indivrank")
-	public ModelAndView indivrank(scorecardVO sv, HttpServletRequest request) {
+	public ModelAndView indivrank(scorecardVO sv, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView im = new ModelAndView();
+		response.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter out = response.getWriter();
 		
 		String id = request.getParameter("rId");
 		if(id == null) {
-			HttpSession session = request.getSession();			 
-			id = (String)session.getAttribute("id");;
+			HttpSession session = request.getSession();
+			if((String)session.getAttribute("id") == null) {
+				out.println("<script>");
+				out.println("alert('로그인부터 하세요')");
+				out.println("history.back();");
+				out.println("</script>");
+			}else {
+				id = (String)session.getAttribute("id");
+			}			
 		}
 		sv.setS_id(id);
 		
@@ -169,5 +182,10 @@ public class IndivrankController {
 		im.addObject("tierStr", tierStr);
 		
 		return im;
+	}
+	
+	@RequestMapping(value="/tier/scorecardImg")
+	public void scorecardImg() {
+		
 	}
 }

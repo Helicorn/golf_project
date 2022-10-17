@@ -223,7 +223,7 @@ for(int i=0 ; i<getCount ; ++i) {
 		});
 		
 		function showSCImg(i){
-			window.open("scorecardImg.do?iDate="+$('#iDate_'+i).text()+"&id="+id,"a","width=400,height=400,left=100,top=50");
+			window.open("scorecardImg?iDate="+$('#iDate_'+i).text()+"&id="+id,"a","width=400,height=400,left=100,top=50");
 		}
 		
 		var id = $("#ind_id").text();

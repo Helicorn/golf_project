@@ -47,7 +47,7 @@
 		<div id="imginfo_wrap">
 			<div>
 			<h2>스코어카드 이미지</h2> <br>
-			<img src="/resources/upload/${folder }/${file }_${id }.png" width="1000" height="300" alt="스코어카드">
+			<img src="/resources/upload/${folder }/${file }_${id }.png" width="900" height="300" alt="스코어카드">
 					
 			</div>
 			<br>
@@ -206,7 +206,7 @@
 			</div>
 			<br>
 			<hr>
-			<input type="submit" class="checkBtn_admin" value="업데이트">
+			<input type="submit" class="submitBtn_admin" value="업데이트">
 			<input type="reset" class="checkBtn_admin" value="다시 입력하기">
 			
 			
